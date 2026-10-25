@@ -1,0 +1,25 @@
+Meeting Title: Engineering Sprint 14 Retrospective & CI/CD Bottlenecks
+Date: October 14, 2026
+Attendees: Alex Rivera (Scrum Master), Hoang Le (DevOps Engineer), Priya Nair (Frontend Engineer), Tomoko Sato (Backend Engineer)
+
+[14:00] Alex Rivera: Welcome to our Sprint 14 retro. We completed 34 out of 38 story points this sprint. Two items spilled over, both blocked by slow CI/CD test pipelines. Let's discuss what went well, what slowed us down, and how we fix it for Sprint 15.
+
+[14:03] Priya Nair: What went well: the new API contract schema validation caught three breaking payload changes before staging deployment. That saved us hours of debugging between frontend and backend.
+
+[14:05] Tomoko Sato: Agreed! What didn't go well is our GitHub Actions integration test suite—it now takes 42 minutes per pull request because every PR spins up a full uncached Docker build and runs Playwright end-to-end tests sequentially.
+
+[14:08] Hoang Le: I looked into the runner metrics yesterday. Two main culprits: Docker layer caching isn't persisted across runners, and Playwright runs on a single worker. If we enable registry-backed Docker Buildx caching and shard Playwright across 4 parallel workers, build times should drop from 42 minutes to under 12 minutes.
+
+[14:11] Alex Rivera: Does sharding Playwright increase runner costs significantly?
+
+[14:12] Hoang Le: Almost neutral—4 workers running for 6 minutes consumes the same runner-minutes as 1 worker running for 24 minutes.
+
+[14:14] Alex Rivera: Awesome. So our team decision is to enable Docker Buildx layer caching and shard Playwright into 4 parallel workers immediately in Sprint 15. We'll also enforce a policy that non-critical E2E tests run nightly on main rather than blocking every PR, keeping only smoke E2E tests on PRs.
+
+[14:17] Priya Nair: That'll be huge. I can tag our existing 85 Playwright specs into `@smoke` versus `@full-regression` by October 19.
+
+[14:19] Hoang Le: And I'll update the GitHub Actions workflow YAML for Docker Buildx caching and 4-way Playwright sharding by October 20.
+
+[14:21] Tomoko Sato: Also, two flaky database time-zone tests failed randomly four times this sprint. I'll refactor those tests to freeze UTC timestamps using `freezegun` by October 18.
+
+[14:23] Alex Rivera: Great ownership everyone. I'll track CI pipeline duration on our Sprint 15 dashboard to verify we hit the sub-12-minute target. Meeting adjourned!

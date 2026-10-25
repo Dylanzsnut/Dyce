@@ -1,0 +1,25 @@
+Meeting Title: Enterprise Healthcare Client Onboarding Kickoff (MedCore Health)
+Date: October 16, 2026
+Attendees: Hannah Brooks (Solutions Architect), Dr. Kevin Chu (MedCore IT Director), Bao Dang (Security & Compliance Lead), Rachel Green (Customer Success Manager)
+
+[11:00] Rachel Green: Welcome Dr. Chu and the MedCore team! Our goal today is to align on your technical onboarding milestones, HIPAA compliance requirements, and pilot launch date for 250 clinicians.
+
+[11:03] Dr. Kevin Chu: Happy to kick off. Our executive steering committee wants the 250-clinician pilot live by November 16. However, our legal and security teams require three non-negotiables before any patient intake notes touch the platform: a signed Business Associate Agreement (BAA), Single Sign-On via Okta SAML 2.0, and zero model training retention on Azure OpenAI endpoints.
+
+[11:07] Bao Dang: Good news on all three: our counter-signed HIPAA BAA is ready for final legal sign-off, and our healthcare tenant runs exclusively on dedicated Azure OpenAI deployments in East US 2 with zero data retention and abuse monitoring opt-out already approved by Microsoft.
+
+[11:10] Hannah Brooks: For Okta SAML 2.0, we support automated SCIM user provisioning as well. Dr. Chu, do you want clinician roles mapped automatically from Okta AD groups?
+
+[11:12] Dr. Kevin Chu: Yes, please map `MedCore-Physicians` to Creator permissions and `MedCore-Nurses` to Reviewer permissions. Also, can we import 50 anonymized historical clinical templates rather than starting from scratch?
+
+[11:15] Hannah Brooks: Definitely. Let's agree on this phased rollout decision: Phase 1 (Sandbox with synthetic data + Okta SAML integration) completes by October 28, Phase 2 (UAT with 15 champion physicians) runs November 2 to November 11, and Phase 3 (Full 250-clinician pilot launch) goes live on November 16.
+
+[11:18] Dr. Kevin Chu: That phased timeline works well for our clinical operations schedule.
+
+[11:20] Bao Dang: I will send the executed HIPAA BAA and Azure zero-data-retention compliance attestation package to MedCore's legal counsel by October 19.
+
+[11:22] Dr. Kevin Chu: Great—I'll have our identity administrator share the Okta SAML metadata XML and export the 50 anonymized templates by October 21.
+
+[11:24] Hannah Brooks: Once I receive those on October 21, I'll configure the dedicated MedCore sandbox tenant, Okta group mappings, and template library by October 26.
+
+[11:26] Rachel Green: And I will circulate a weekly onboarding tracker every Wednesday and schedule clinician training sessions for November 12 and 13. Looking forward to a smooth launch!

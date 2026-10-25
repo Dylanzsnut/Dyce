@@ -1,0 +1,27 @@
+Meeting Title: Mobile App 3.0 Marketing Launch Planning
+Date: October 17, 2026
+Attendees: Quynh Vo (Marketing Director), Jason Lee (Growth Marketing Manager), Mai Hoang (Content Lead), Oliver Grant (Mobile Engineering Manager)
+
+[15:00] Quynh Vo: Hi team. Mobile App 3.0 ships to the App Store and Google Play on November 10. Today we need to agree on launch channels, budget split, and who owns which launch assets.
+
+[15:02] Oliver Grant: Engineering status first: the release candidate build is feature-complete. The new offline mode and redesigned home feed passed internal QA. The only open risk is Apple App Review. Last release took 4 days, so we plan to submit on November 3 to leave a buffer.
+
+[15:05] Jason Lee: Thanks Oliver. For channels, last quarter's data shows paid social on TikTok and Instagram delivered a cost per install of 1.10 dollars, compared to 2.40 dollars on Google App Campaigns. I'd recommend putting 60 percent of the 40,000 dollar launch budget into TikTok and Instagram, 25 percent into Google App Campaigns, and 15 percent into influencer partnerships.
+
+[15:08] Mai Hoang: From the content side, offline mode is the strongest story. Our survey showed 64 percent of churned users cited poor connectivity on commutes. I'd lead every asset with the message "Your feed, even without signal."
+
+[15:10] Quynh Vo: I like that. Are we confident offline mode works well enough to be the headline feature?
+
+[15:11] Oliver Grant: Yes. It caches the last 200 posts and syncs within 3 seconds after reconnecting. Beta testers rated it 4.6 out of 5.
+
+[15:13] Quynh Vo: Then let's decide: offline mode is the headline message, and we approve Jason's budget split of 60 percent paid social, 25 percent Google App Campaigns, and 15 percent influencers. We'll hold back on the referral rewards program until after launch so we can measure organic uptake cleanly.
+
+[15:16] Jason Lee: Understood. I'll set up the TikTok and Instagram campaigns with three creative variants for A/B testing and have them ready in draft by November 5.
+
+[15:18] Mai Hoang: I'll produce the 30-second launch video, the blog announcement, and new App Store screenshots by October 31. Oliver, I'll need a stable staging build to record screen captures.
+
+[15:19] Oliver Grant: I'll share a TestFlight and Play internal testing build with your team by October 22. I'll also submit the build to Apple App Review on November 3.
+
+[15:21] Jason Lee: One open question: do we have approval from Legal for influencer contracts in Vietnam and Thailand? The disclosure rules differ by country.
+
+[15:22] Quynh Vo: Not yet. I'll check with Legal and get an answer on influencer disclosure requirements for Vietnam and Thailand by October 24. Let's reconvene next Thursday to review creative drafts.

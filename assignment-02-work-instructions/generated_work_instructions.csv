@@ -1,0 +1,106 @@
+id,task_description,generated_work_instruction
+1,"Install the battery module in the rear compartment, connect to the high-voltage harness, and verify torque on fasteners.","**Safety Precautions:**
+- Isolate vehicle electrical system (Lockout/Tagout) and verify 0V state before handling components.
+- Wear Class 0 high-voltage (HV) insulated gloves with leather protectors, safety glasses, and ESD/insulated safety shoes.
+
+**Required Tools & Equipment:**
+- Insulated battery lifting hoist/fixture
+- Calibrated digital torque wrench (with insulated socket)
+- Digital multimeter / HV voltage tester
+- Torque witness paint marker and MES/logbook terminal
+
+**Step-by-Step Procedure:**
+1. Verify vehicle power is completely off, confirm service disconnect plug is removed, and put on HV PPE.
+2. Inspect the rear compartment mounting tray and HV harness connector pins for debris or damage.
+3. Use the insulated lifting hoist to lower and seat the battery module flush onto the rear compartment locating pins.
+4. Thread all mounting fasteners by hand to prevent cross-threading, then tighten in the specified cross-pattern sequence using a calibrated digital torque wrench to factory torque values.
+5. Align and insert the high-voltage harness connector until an audible click is heard, then push the red Connector Position Assurance (CPA) secondary lock fully forward.
+6. Apply torque witness marks to each fastener and record fastener torque values and serial numbers in the production logbook.
+
+**Acceptance Criteria & Quality Check:**
+- Battery module sits flush against all mounting pads with zero cable pinch points.
+- All fasteners meet target torque specification (recorded in MES/logbook) and have witness marks applied.
+- HV harness primary latch and CPA secondary lock are fully engaged with zero tug movement."
+2,Calibrate the ADAS (Advanced Driver Assistance Systems) radar sensors on the front bumper using factory alignment targets.,"**Safety Precautions:**
+- Ensure vehicle is parked in the designated ADAS calibration bay with parking brake engaged and wheel chocks installed.
+- Keep laser alignment line-of-sight clear and avoid staring directly into alignment lasers.
+
+**Required Tools & Equipment:**
+- OEM ADAS calibration frame and corner reflector / radar alignment target board
+- Laser wheel-alignment / centerline measurement rig
+- Tire pressure gauge and vehicle ballast weights (if specified)
+- OEM diagnostic scan tool connected via OBD-II
+
+**Step-by-Step Procedure:**
+1. Position the vehicle on a level calibration floor, verify tire pressures match placard specifications, and confirm front bumper fascia is clean and undamaged.
+2. Establish the vehicle thrust line and geometric centerline using the laser alignment rig.
+3. Place the factory radar alignment target at the exact longitudinal distance, lateral offset, and height specified for the new model in front of the bumper radar sensor.
+4. Clear the radar field of view of all metallic objects, tools, and personnel within the calibration cone.
+5. Connect the OEM diagnostic tool to the OBD-II port, switch ignition to ON (engine/propulsion OFF), and launch the Front Radar Static Calibration routine.
+6. Follow on-screen prompts until calibration completes, clear any temporary DTCs, and save the calibration certificate to the vehicle build record.
+
+**Acceptance Criteria & Quality Check:**
+- Horizontal and vertical radar misalignment angles fall within factory tolerance (+/- 0.5 deg or model spec).
+- Diagnostic tool reports 'Calibration Successful' with zero active ADAS fault codes."
+3,Apply anti-corrosion sealant to all exposed welds on the door panels before painting.,"**Safety Precautions:**
+- Work in a ventilated booth/station and wear nitrile gloves, safety glasses, and an approved organic-vapor respirator if required by SDS.
+- Keep solvent cleaners away from ignition sources.
+
+**Required Tools & Equipment:**
+- Lint-free wipes and approved degreaser / surface prep solvent
+- Pneumatic or manual seam-sealer applicator gun with approved anti-corrosion sealant cartridge
+- Nylon spreader / brush tool
+- Wet-film thickness gauge and inspection light
+
+**Step-by-Step Procedure:**
+1. Inspect door panel hem flanges and weld seams for weld spatter, burrs, oil, or dust.
+2. Wipe all exposed welds and adjacent metal surfaces using lint-free cloths dampened with approved surface cleaner, then allow to flash dry completely.
+3. Dispense a continuous, uniform bead of approved anti-corrosion sealant along every exposed weld seam and joint overlap, keeping sealant out of drain holes.
+4. Tool or brush the sealant bead immediately where required to wet the weld edges and eliminate air pockets or pinholes.
+5. Place the door panel on the curing rack and allow the specified flash/curing time before transferring to the paint booth.
+6. Perform a visual 360-degree seam inspection under bright lighting prior to releasing the panel.
+
+**Acceptance Criteria & Quality Check:**
+- 100% continuous sealant coverage over all exposed welds with no gaps, skips, air bubbles, or bridged drain holes.
+- Sealant cured properly and free of surface contamination prior to paint entry."
+4,Perform leak test on coolant system after radiator installation. Record pressure readings and verify against specifications.,"**Safety Precautions:**
+- Never open a pressurized or hot cooling system; wear safety goggles and chemical-resistant gloves.
+- Stand clear of radiator hoses and relief valves while pressurizing the system.
+
+**Required Tools & Equipment:**
+- Calibrated cooling system pressure tester kit with model-specific reservoir adapter cap
+- Timer / stopwatch
+- Inspection mirror and UV/inspection flashlight
+- Shop-floor quality logsheet / MES terminal
+
+**Step-by-Step Procedure:**
+1. Confirm radiator, clamps, drain plug, and coolant hoses are fully installed and the system is at ambient temperature.
+2. Attach the calibrated pressure tester adapter securely to the coolant expansion tank / radiator neck.
+3. Pump/pressurize the cooling system gradually to the factory test pressure specification (do not exceed maximum rated cap pressure).
+4. Record the initial stabilized pressure reading and start the hold timer for the required test duration (e.g., 2–5 minutes per engineering spec).
+5. Visually inspect the radiator core, hose junctions, clamps, water pump housing, and drain plug for any weeping, seepage, or air hiss.
+6. Record the final pressure reading at the end of the hold period, compare pressure drop against engineering specifications, safely depressurize via the relief valve, and remove the adapter.
+
+**Acceptance Criteria & Quality Check:**
+- Pressure drop over the test hold duration is within factory maximum allowable decay (0 psi / within tolerance) with zero visible leaks.
+- Initial pressure, final pressure, hold duration, and pass/fail status recorded in the build record."
+5,Program the infotainment ECU with the latest software package and validate connectivity with dashboard display.,"**Safety Precautions:**
+- Connect an approved 12V battery maintainer/power supply before flashing to prevent low-voltage ECU bricking.
+- Observe ESD precautions when handling diagnostic cables and connectors.
+
+**Required Tools & Equipment:**
+- Regulated 12V automotive programming power supply
+- OEM VCI (Vehicle Communication Interface) / OBD-II diagnostic programming terminal with verified latest software package
+- Test smartphone / test media source (USB/Bluetooth) for functional validation
+
+**Step-by-Step Procedure:**
+1. Connect the regulated 12V power supply to the vehicle auxiliary battery terminals and verify stable voltage (13.2V–13.8V).
+2. Plug the OEM VCI diagnostic connector into the vehicle OBD-II port, turn vehicle ignition to Accessory/ON mode, and verify vehicle VIN communication.
+3. Select the Infotainment Head Unit (IVI ECU), verify current hardware part number compatibility, and initiate flashing with the latest approved software release package.
+4. Wait without interrupting power or opening/closing doors until programming reaches 100% and the ECU performs its automatic hard reset.
+5. Verify the dashboard center display boots cleanly, confirm the updated software version string on the system info screen, and test touch response, instrument cluster CAN sync, audio output, and Bluetooth/USB connectivity.
+6. Run a post-flash DTC scan, clear communication reset codes, log software version to MES, and disconnect VCI and power supply.
+
+**Acceptance Criteria & Quality Check:**
+- Infotainment ECU reports exact target software version number with zero active DTCs.
+- Dashboard display renders without artifacts, responds to touch/steering-wheel controls, and passes audio/connectivity checks."

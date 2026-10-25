@@ -1,0 +1,27 @@
+Meeting Title: Payment Gateway Latency Incident Post-Mortem (SEV-2)
+Date: October 15, 2026
+Attendees: Elena Rostova (Site Reliability Lead), Tuan Pham (Payments Service Owner), Marcus Vance (Database Administrator), Nina Patel (Customer Support Manager)
+
+[10:30] Elena Rostova: Thanks for joining this blameless post-mortem for yesterday's SEV-2 checkout latency incident between 18:10 and 18:47 UTC. Let's review impact, root cause, and preventative actions.
+
+[10:32] Nina Patel: Customer impact summary: 1,420 checkout attempts experienced timeouts exceeding 15 seconds, and we received 68 support tickets. No duplicate charges occurred thanks to our idempotency keys, and failed orders recovered once latency normalized.
+
+[10:35] Tuan Pham: Root cause: During yesterday's flash sale traffic spike, our `payment-webhook-worker` scaled from 4 pods to 20 pods automatically, as configured. However, each pod opened a connection pool of 25 PostgreSQL connections—totaling 500 connections—which exhausted the primary database's 450-connection limit and starved checkout API queries.
+
+[10:39] Marcus Vance: Exactly. Once `max_connections` saturated on PostgreSQL, new checkout transactions queued waiting for free connections. At 18:42 UTC, I temporarily capped `payment-webhook-worker` replicas at 10 pods, which immediately dropped active DB connections to 260 and restored checkout p99 latency to 180ms by 18:47 UTC.
+
+[10:43] Elena Rostova: Clear diagnosis. What are we deciding to prevent recurrence before next month's Black Friday traffic?
+
+[10:45] Marcus Vance: First, we should deploy PgBouncer in transaction-pooling mode in front of the payments PostgreSQL cluster so hundreds of application pods can multiplex safely onto 100 server connections.
+
+[10:47] Tuan Pham: Second, we should reduce per-pod SQLAlchemy pool size on `payment-webhook-worker` from 25 down to 8—webhook workers are I/O bound on external HTTP calls, not DB queries.
+
+[10:49] Elena Rostova: Both approved. Let's also add a Prometheus alert when PostgreSQL connection utilization exceeds 75% for 2 minutes—right now our alert only fires at 95%, which was too late.
+
+[10:51] Tuan Pham: I'll deploy the reduced SQLAlchemy pool size (`pool_size=8`) to production today, October 15, after staging soak testing.
+
+[10:53] Marcus Vance: I'll provision PgBouncer in staging by October 20 and schedule the production cutover maintenance window for October 24.
+
+[10:55] Elena Rostova: I'll add the 75% DB connection threshold alert in Grafana/Alertmanager by October 16, and Nina, can your team send the proactive apology voucher email to the 68 affected ticket holders by tomorrow?
+
+[10:57] Nina Patel: Yes, templates are drafted—we'll send them out by October 16 at noon.

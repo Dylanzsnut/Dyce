@@ -1,0 +1,25 @@
+Meeting Title: Q4 AI Product Roadmap & Feature Prioritization Sync
+Date: October 12, 2026
+Attendees: Linh Tran (Product Manager), Minh Nguyen (Lead Backend Engineer), Sara Chen (UX Designer), David Park (QA Lead)
+
+[09:00] Linh Tran: Good morning everyone. Today we need to lock down our Q4 scope for the Customer Support Copilot v2.2 release. Specifically, we need to decide between shipping multi-language translation or voice-to-ticket transcription first, and confirm our beta timeline.
+
+[09:02] Minh Nguyen: From the backend side, multi-language translation using Azure OpenAI GPT-4o-mini is already prototyped. Latency averages 420 milliseconds per message, well under our 800ms SLA. Voice-to-ticket requires setting up an audio streaming pipeline and storage retention policies, which adds at least three weeks of infrastructure work.
+
+[09:05] Sara Chen: That aligns with user research too. Out of 28 enterprise support leads we interviewed last month, 21 ranked real-time Spanish, Japanese, and Vietnamese chat translation as their top blocker, whereas only 6 asked for voice transcription. Also, the UI toggle for inline translation is ready in Figma.
+
+[09:08] David Park: If we go with multi-language translation for v2.2, QA will need curated evaluation datasets in all three target languages to verify glossary accuracy—especially billing terms so the model doesn't mistranslate refund policies.
+
+[09:11] Linh Tran: Great point, David. Let's make it official: we are prioritizing real-time multi-language chat translation (Spanish, Japanese, Vietnamese) for the v2.2 release on November 20, and deferring voice-to-ticket transcription to Q1 2027.
+
+[09:14] Minh Nguyen: Sounds good. One technical decision we also need: should we cache repeated FAQ translations in Redis? It'll cut token costs by roughly 35%.
+
+[09:16] Linh Tran: Yes, let's enable Redis caching with a 24-hour TTL, provided no customer PII is stored in cache keys. Minh, can you implement the PII-scrubbing middleware and Redis cache layer by October 23?
+
+[09:17] Minh Nguyen: Will do. I'll have the PR up for review by October 23.
+
+[09:19] Sara Chen: I'll finalize the Figma handoff specs for the language selector badge and confidence indicator by October 16 so frontend can start Monday.
+
+[09:21] David Park: And I'll partner with the localization team to assemble 150 test conversations per language by October 25 for automated regression testing.
+
+[09:23] Linh Tran: Perfect. Let's also schedule a 30-minute security review with InfoSec before beta rollout—I'll book that session by Friday, October 16. Thanks everyone!
