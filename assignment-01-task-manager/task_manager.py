@@ -24,34 +24,26 @@ Concepts Demonstrated:
 # }
 tasks = []
 
-# Counter to ensure every new task gets a strictly increasing unique ID,
-# even if previously created tasks (including the most recent one) are deleted.
-next_task_id = 1
-
 
 # Step 2: Implement Core Functions
 def add_task(description):
     """Add a new task to the task list after validating its description."""
-    global next_task_id
-
     if not isinstance(description, str) or not description.strip():
         print("Error: Task description cannot be empty.")
         return None
 
     cleaned_description = description.strip()
 
-    # Ensure unique ID generation even if tasks were populated externally
-    if tasks:
-        next_task_id = max(next_task_id, max(task["id"] for task in tasks) + 1)
+    # Determine unique task ID based on current tasks list
+    task_id = max((t["id"] for t in tasks), default=0) + 1
 
     task = {
-        "id": next_task_id,
+        "id": task_id,
         "description": cleaned_description,
         "completed": False,
     }
     tasks.append(task)
-    print(f"Task '{cleaned_description}' added with ID {next_task_id}.")
-    next_task_id += 1
+    print(f"Task '{cleaned_description}' added with ID {task_id}.")
     return task
 
 
@@ -61,25 +53,16 @@ def view_tasks():
         print("No tasks available.")
         return
 
-    print("\n--- Current Tasks ---")
-    completed_count = 0
     for task in tasks:
-        if task["completed"]:
-            status = "Done"
-            completed_count += 1
-        else:
-            status = "Pending"
+        status = "Done" if task["completed"] else "Pending"
         print(f"{task['id']}: {task['description']} [{status}]")
-
-    pending_count = len(tasks) - completed_count
-    print(
-        f"---------------------\n"
-        f"Total: {len(tasks)} | Done: {completed_count} | Pending: {pending_count}"
-    )
 
 
 def mark_completed(task_id):
     """Mark a specific task as completed by its unique task ID."""
+    if isinstance(task_id, str) and task_id.strip().isdigit():
+        task_id = int(task_id.strip())
+
     if not isinstance(task_id, int) or isinstance(task_id, bool) or task_id <= 0:
         print("Invalid task ID.")
         return False
@@ -101,6 +84,9 @@ def delete_task(task_id):
     """Delete a specific task from the task list by its unique task ID."""
     global tasks
 
+    if isinstance(task_id, str) and task_id.strip().isdigit():
+        task_id = int(task_id.strip())
+
     if not isinstance(task_id, int) or isinstance(task_id, bool) or task_id <= 0:
         print("Invalid task ID.")
         return False
@@ -108,10 +94,7 @@ def delete_task(task_id):
     for index, task in enumerate(tasks):
         if task["id"] == task_id:
             removed_task = tasks.pop(index)
-            print(
-                f"Task ID {task_id} ('{removed_task['description']}') "
-                f"deleted successfully."
-            )
+            print(f"Task ID {task_id} deleted successfully.")
             return True
 
     print(f"No task found with ID {task_id}.")

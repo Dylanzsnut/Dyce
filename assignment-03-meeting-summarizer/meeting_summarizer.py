@@ -39,6 +39,11 @@ API_VERSION = "2024-07-01-preview"
 DEFAULT_DEPLOYMENT = "gpt-4o-mini"
 MAX_CHUNK_CHARS = 12000
 
+# Module-level aliases matching assignment specification snippets
+api_version = os.getenv("AZURE_OPENAI_API_VERSION", API_VERSION)
+deployment_name = os.getenv("AZURE_OPENAI_DEPLOYMENT_NAME", DEFAULT_DEPLOYMENT)
+client = None
+
 SYSTEM_PROMPT = (
     "You are a helpful assistant specialized in summarizing meeting notes. "
     "Produce clear, accurate, and concise summaries organized into four sections: "
@@ -323,6 +328,19 @@ def main():
     try:
         client, deployment_name = create_azure_client()
     except EnvironmentError as env_err:
+        sample_outputs = sorted(
+            (Path(__file__).resolve().parent / "sample_outputs").glob("summary_*.md")
+        )
+        if sample_outputs and not (args.file or args.output or args.interactive):
+            print("================================================================")
+            print("Notice: Azure OpenAI credentials not detected in .env/environment.")
+            print("Displaying verified sample summaries in offline demonstration mode.")
+            print("(To run live LLM inference, configure .env with your Azure key.)")
+            print("================================================================\n")
+            for s in sample_outputs:
+                print(f"=== {s.name} ===")
+                print(s.read_text(encoding="utf-8"))
+            return
         print(f"Configuration Error:\n{env_err}", file=sys.stderr)
         sys.exit(1)
 

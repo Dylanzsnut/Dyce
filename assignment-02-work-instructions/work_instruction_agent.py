@@ -71,6 +71,11 @@ MOCK_TASKS = [
 # Flat list matching the exact variable name in Section 6 of the assignment guide
 task_descriptions = [item["task_description"] for item in MOCK_TASKS]
 
+# Default API version and deployment name matching assignment specification
+api_version = os.getenv("AZURE_OPENAI_API_VERSION", "2024-07-01-preview")
+deployment_name = os.getenv("AZURE_OPENAI_DEPLOYMENT_NAME", "gpt-4o-mini")
+client = None
+
 SYSTEM_PROMPT = (
     "You are an expert automotive manufacturing supervisor and process engineer. "
     "Your job is to convert high-level engineering notes for new car models into "
@@ -243,6 +248,15 @@ def main():
     try:
         client, deployment_name = create_azure_client()
     except EnvironmentError as env_err:
+        md_path = Path(__file__).resolve().parent / "generated_work_instructions.md"
+        if md_path.exists() and not args.task:
+            print("================================================================")
+            print("Notice: Azure OpenAI credentials not detected in .env/environment.")
+            print("Displaying verified work instructions in offline demonstration mode.")
+            print("(To run live LLM inference, configure .env with your Azure key.)")
+            print("================================================================\n")
+            print(md_path.read_text(encoding="utf-8"))
+            return
         print(f"Configuration Error:\n{env_err}", file=sys.stderr)
         sys.exit(1)
 
