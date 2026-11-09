@@ -2,33 +2,33 @@
 
 [![Python Version](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12-blue.svg)](https://www.python.org/)
 [![Tests Status](https://img.shields.io/badge/tests-33%20%2F%2033%20passed-success.svg)](test_all_assignments.py)
-[![Assignments](https://img.shields.io/badge/assignments-7%20%2F%207%20completed-brightgreen.svg)](#-assignment-portfolio--matrix)
-[![Offline Fallback](https://img.shields.io/badge/dual--mode-live%20API%20%2B%20offline%20fallback-orange.svg)](#-dual-mode-engineering-resilience)
+[![Assignments](https://img.shields.io/badge/assignments-7%20%2F%207%20completed-brightgreen.svg)](#assignment-portfolio-and-matrix)
+[![Offline Fallback](https://img.shields.io/badge/dual--mode-live%20API%20%2B%20offline%20fallback-orange.svg)](#dual-mode-engineering-resilience)
 [![Code Style](https://img.shields.io/badge/code%20style-PEP%208%20clean-informational.svg)](README.md)
 
 Welcome to the comprehensive repository for the **AI Elevate: AI Application Engineer** program. This repository hosts production-ready, thoroughly hardened implementations of all seven core assignments—spanning fundamental Python CLI architecture, Azure OpenAI prompt engineering, transcript summarization, conversational multi-turn agents, structured function calling with jittered retries, two-stage NLP classification, and neural Text-to-Speech (TTS) synthesis.
 
 ---
 
-## 📑 Table of Contents
+## Table of Contents
 
-- [Quick Start: Run the Test Suite](#-quick-start-run-the-test-suite)
-- [Assignment Portfolio & Matrix](#-assignment-portfolio--matrix)
-- [Dual-Mode Engineering Resilience](#-dual-mode-engineering-resilience)
-- [Detailed Assignment Walkthroughs](#-detailed-assignment-walkthroughs)
+- [Quick Start: Run the Test Suite](#quick-start-run-the-test-suite)
+- [Assignment Portfolio and Matrix](#assignment-portfolio-and-matrix)
+- [Dual-Mode Engineering Resilience](#dual-mode-engineering-resilience)
+- [Detailed Assignment Walkthroughs](#detailed-assignment-walkthroughs)
   - [Assignment 01: Command-Line Task Manager](#1-assignment-01-command-line-task-manager)
   - [Assignment 02: Automotive Work Instructions](#2-assignment-02-automotive-work-instructions)
   - [Assignment 03: AI Meeting Summarizer](#3-assignment-03-ai-meeting-summarizer)
-  - [Assignment 04: Conversational Assistant with Advanced Prompting](#4-assignment-04-conversational-assistant)
-  - [Assignment 05: Azure Function Calling & Retries](#5-assignment-05-azure-function-calling--retries)
+  - [Assignment 04: Conversational Assistant](#4-assignment-04-conversational-assistant)
+  - [Assignment 05: Azure Function Calling and Retries](#5-assignment-05-azure-function-calling-and-retries)
   - [Assignment 06: Logistics Delay Reason Classification](#6-assignment-06-logistics-delay-reason-classification)
   - [Assignment 07: Hugging Face Text-to-Speech (TTS)](#7-assignment-07-hugging-face-text-to-speech-tts)
-- [Repository Structure](#-repository-structure)
-- [Environment Setup & Optional Azure Credentials](#-environment-setup--optional-azure-credentials)
+- [Repository Structure](#repository-structure)
+- [Environment Setup and Optional Azure Credentials](#environment-setup-and-optional-azure-credentials)
 
 ---
 
-## ⚡ Quick Start: Run the Test Suite
+## Quick Start: Run the Test Suite
 
 All 7 assignments feature **zero-setup execution**. You do **not** need Azure OpenAI API keys, GPUs, or external server access to run the full test suite—every module includes built-in offline fallback engines and mock drivers that allow autograders, reviewers, and local developers to verify functionality instantly.
 
@@ -62,7 +62,7 @@ py -3.12 test_all_assignments.py
 
 ---
 
-## 📊 Assignment Portfolio & Matrix
+## Assignment Portfolio and Matrix
 
 Every assignment is self-contained within its own folder, accompanied by its primary application script, a dedicated test suite (`test_assignment_0X.py`), comprehensive documentation, prompt engineering specifications (`prompts.md`), and the auto-refined meta-prompt used to construct it (`GENERATION_PROMPT.md`).
 
@@ -78,7 +78,7 @@ Every assignment is self-contained within its own folder, accompanied by its pri
 
 ---
 
-## 🛡 Dual-Mode Engineering Resilience
+## Dual-Mode Engineering Resilience
 
 A core engineering priority in this repository is **hardened evaluation safety**. In production and academic evaluation settings, scripts often fail because API keys are missing, cloud rate limits trigger 429 errors, or autograders import internal functions directly rather than invoking `main()`.
 
@@ -89,7 +89,7 @@ To prevent crashes:
 
 ---
 
-## 🔍 Detailed Assignment Walkthroughs
+## Detailed Assignment Walkthroughs
 
 ### 1. Assignment 01: Command-Line Task Manager
 - **Folder:** [`assignment-01-task-manager/`](assignment-01-task-manager/)
@@ -131,7 +131,7 @@ To prevent crashes:
 
 ---
 
-### 5. Assignment 05: Azure Function Calling & Retries
+### 5. Assignment 05: Azure Function Calling and Retries
 - **Folder:** [`assignment-05-azure-function-calling/`](assignment-05-azure-function-calling/)
 - **Description:** Structured function calling on Azure OpenAI with production-grade batch processing and resilient retries.
 - **Key Features:** Strict JSON schema definition for multi-day travel itineraries (`generate_itinerary`), Tenacity exponential backoff with jitter (`wait_random_exponential(min=1, max=10)`, `stop_after_attempt(5)`), and batch request pacing to prevent HTTP 429 quota exhaustion.
@@ -161,7 +161,7 @@ To prevent crashes:
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```text
 .
@@ -246,7 +246,7 @@ To prevent crashes:
 
 ---
 
-## ⚙ Environment Setup & Optional Azure Credentials
+## Environment Setup and Optional Azure Credentials
 
 ### Prerequisites
 - **Python**: Version 3.10, 3.11, or 3.12.
