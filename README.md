@@ -1,28 +1,28 @@
-# AI Application Engineering Portfolio
+# AI Application Engineering: Core Systems & LLM Project Suite
 
 [![Python Version](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12-blue.svg)](https://www.python.org/)
 [![Tests Status](https://img.shields.io/badge/tests-33%20%2F%2033%20passed-success.svg)](test_all_assignments.py)
-[![Portfolio Projects](https://img.shields.io/badge/case%20studies-7%20production%20systems-brightgreen.svg)](#portfolio-case-studies)
+[![Project Suite](https://img.shields.io/badge/project%20suite-7%20interconnected%20modules-brightgreen.svg)](#project-modules-and-system-case-studies)
 [![Architecture](https://img.shields.io/badge/architecture-dual--mode%20cloud%20%2B%20offline%20fallback-orange.svg)](#engineering-standards-and-reliability)
 [![Code Quality](https://img.shields.io/badge/code%20quality-PEP%208%20clean-informational.svg)](test_all_assignments.py)
 
-Production-grade engineering implementations demonstrating end-to-end AI application development across large language model orchestration, advanced prompt engineering, resilient cloud APIs, distributed quota management, cost-optimized classification pipelines, and neural speech synthesis.
+A modular engineering project demonstrating production-grade implementations across large language model orchestration, advanced prompt architecture, resilient cloud API pipelines, two-stage NLP triage, and neural speech synthesis.
 
 ---
 
 ## Table of Contents
 
-- [Executive Summary](#executive-summary)
-- [Core Technical Competencies](#core-technical-competencies)
+- [Project Context and Scope](#project-context-and-scope)
+- [Technical Competencies Demonstrated](#technical-competencies-demonstrated)
 - [Quick Start and Instant Verification](#quick-start-and-instant-verification)
-- [Portfolio Case Studies](#portfolio-case-studies)
-  - [Case Study 01: Interactive CLI State Manager](#case-study-01-interactive-cli-state-manager)
-  - [Case Study 02: Prompt-Driven Automotive SOP Generator](#case-study-02-prompt-driven-automotive-sop-generator)
-  - [Case Study 03: Executive Meeting Summarization Engine](#case-study-03-executive-meeting-summarization-engine)
-  - [Case Study 04: Multi-Turn Conversational Event Assistant](#case-study-04-multi-turn-conversational-event-assistant)
-  - [Case Study 05: Resilient Azure Function Calling and Batch Pipeline](#case-study-05-resilient-azure-function-calling-and-batch-pipeline)
-  - [Case Study 06: Hybrid Two-Stage Delay Reason Classifier](#case-study-06-hybrid-two-stage-delay-reason-classifier)
-  - [Case Study 07: Neural Text-to-Speech (TTS) Inference Pipeline](#case-study-07-neural-text-to-speech-tts-inference-pipeline)
+- [Project Modules and System Case Studies](#project-modules-and-system-case-studies)
+  - [Module 01: Interactive CLI State Manager](#module-01-interactive-cli-state-manager)
+  - [Module 02: Prompt-Driven Automotive SOP Generator](#module-02-prompt-driven-automotive-sop-generator)
+  - [Module 03: Executive Meeting Summarization Engine](#module-03-executive-meeting-summarization-engine)
+  - [Module 04: Multi-Turn Conversational Event Assistant](#module-04-multi-turn-conversational-event-assistant)
+  - [Module 05: Resilient Azure Function Calling and Batch Pipeline](#module-05-resilient-azure-function-calling-and-batch-pipeline)
+  - [Module 06: Hybrid Two-Stage Delay Reason Classifier](#module-06-hybrid-two-stage-delay-reason-classifier)
+  - [Module 07: Neural Text-to-Speech (TTS) Inference Pipeline](#module-07-neural-text-to-speech-tts-inference-pipeline)
 - [Engineering Standards and Reliability](#engineering-standards-and-reliability)
 - [Prompt Engineering Governance and Traceability](#prompt-engineering-governance-and-traceability)
 - [Repository Architecture](#repository-architecture)
@@ -30,18 +30,19 @@ Production-grade engineering implementations demonstrating end-to-end AI applica
 
 ---
 
-## Executive Summary
+## Project Context and Scope
 
-This portfolio represents a comprehensive body of work in **AI Application Engineering**. Rather than building toy prototypes or ungrounded chat wrappers, every system in this repository is built to production standards:
-- **Resilient Distributed Systems:** Network resilience using jittered exponential backoff (`tenacity`) to gracefully absorb HTTP 429 rate limits and API outages.
+This repository represents a focused, multi-module project within a broader portfolio of AI application engineering. Rather than standalone toy scripts, it brings together seven interconnected systems developed to rigorous enterprise engineering standards:
+
+- **Resilient Distributed Systems:** Network resilience utilizing jittered exponential backoff (`tenacity`) to gracefully absorb HTTP 429 rate limits and gateway timeouts.
 - **Deterministic AI Interfaces:** Schema-enforced function calling (`tools`) and temperature clamping (`temperature=0`) ensuring strict output contracts for downstream software consumption.
-- **Cost and Latency Optimization:** Two-stage hybrid NLP pipelines combining sub-millisecond heuristic triage with selective LLM disambiguation, reducing inference costs by up to 80%.
+- **Cost and Latency Optimization:** Two-stage hybrid NLP pipelines combining sub-millisecond heuristic triage with selective LLM disambiguation, reducing API expenditure by up to 80%.
 - **Zero-Crash Evaluation Architecture:** Dual-mode design incorporating hardened offline fallback engines, allowing hiring managers, automated grading harnesses, and CI/CD pipelines to verify 100% of test suites without API keys or external network dependencies.
 - **Prompt Traceability:** Complete operational prompt specifications (`prompts.md`) and meta-prompts (`GENERATION_PROMPT.md`) documenting all system personas, few-shot examples, and chain-of-thought instructions.
 
 ---
 
-## Core Technical Competencies
+## Technical Competencies Demonstrated
 
 | Competency Area | Technologies and Methodologies |
 | :--- | :--- |
@@ -55,9 +56,9 @@ This portfolio represents a comprehensive body of work in **AI Application Engin
 
 ## Quick Start and Instant Verification
 
-All 7 portfolio systems feature **zero-dependency instant execution**. Automated offline fallback engines and mock drivers are built directly into the codebase, enabling verification in seconds without configuring credentials or downloading external weights.
+All 7 modules feature **zero-dependency instant execution**. Automated offline fallback engines and mock drivers are built directly into the codebase, enabling verification in seconds without configuring credentials or downloading external weights.
 
-### Run All 33 Automated Tests Across All 7 Systems
+### Run All 33 Automated Tests Across All 7 Modules
 ```bash
 # Using Python 3 on Windows, macOS, or Linux:
 python test_all_assignments.py
@@ -69,7 +70,7 @@ py -3.12 test_all_assignments.py
 ### Verified Test Suite Results
 ```text
 ================================================================================
-  AI APPLICATION ENGINEER PORTFOLIO — MASTER AUDIT SUITE
+  CORE AI SYSTEMS PROJECT SUITE — MASTER AUDIT SUITE
 ================================================================================
 
 [AUDIT 1/7] Assignment 01: CLI Task Manager ....................... PASS
@@ -81,17 +82,17 @@ py -3.12 test_all_assignments.py
 [AUDIT 7/7] Assignment 07: Hugging Face TTS Inference ............. PASS
 
 ================================================================================
-  AUDIT RESULT: ALL 7 SYSTEMS VERIFIED (33/33 TESTS PASSING)
+  AUDIT RESULT: ALL 7 MODULES VERIFIED (33/33 TESTS PASSING)
 ================================================================================
 ```
 
 ---
 
-## Portfolio Case Studies
+## Project Modules and System Case Studies
 
 ### Summary Matrix
 
-| # | Project Name | Domain / Technical Focus | Primary Module | Test Suite | Prompt Specs | Outputs / Deliverables | Status |
+| # | Module Name | Domain / Technical Focus | Primary Script | Test Suite | Prompt Specs | Outputs / Deliverables | Status |
 | :-: | :--- | :--- | :--- | :--- | :--- | :--- | :-: |
 | **01** | **State Manager** | CLI state lifecycle, monotonic ID safety | [`task_manager.py`](assignment-01-task-manager/task_manager.py) | [`test_assignment_01.py`](assignment-01-task-manager/test_assignment_01.py) | [`GENERATION_PROMPT.md`](assignment-01-task-manager/GENERATION_PROMPT.md) | In-terminal interactive CLI | **PASS** |
 | **02** | **SOP Generator** | Automotive manufacturing prompt engineering | [`work_instruction_agent.py`](assignment-02-work-instructions/work_instruction_agent.py) | [`test_assignment_02.py`](assignment-02-work-instructions/test_assignment_02.py) | [`prompts.md`](assignment-02-work-instructions/prompts.md) | [`SOP Cards (.md)`](assignment-02-work-instructions/generated_work_instructions.md), [`SOP Export (.csv)`](assignment-02-work-instructions/generated_work_instructions.csv) | **PASS** |
@@ -103,7 +104,7 @@ py -3.12 test_all_assignments.py
 
 ---
 
-### Case Study 01: Interactive CLI State Manager
+### Module 01: Interactive CLI State Manager
 
 - **Directory:** [`assignment-01-task-manager/`](assignment-01-task-manager/)
 - **Core Engineering Problem:** Creating a robust, clean-architecture command-line state manager that guarantees data integrity, prevents identifier collisions during active item deletions, and cleanly handles edge-case user inputs without crashing.
@@ -120,7 +121,7 @@ py -3.12 test_all_assignments.py
 
 ---
 
-### Case Study 02: Prompt-Driven Automotive SOP Generator
+### Module 02: Prompt-Driven Automotive SOP Generator
 
 - **Directory:** [`assignment-02-work-instructions/`](assignment-02-work-instructions/)
 - **Core Engineering Problem:** Converting unstructured automotive engineering change notices into standardized, shop-floor-ready Standard Operating Procedures (SOPs) without relying on expensive database infrastructure or RAG retrieval.
@@ -138,7 +139,7 @@ py -3.12 test_all_assignments.py
 
 ---
 
-### Case Study 03: Executive Meeting Summarization Engine
+### Module 03: Executive Meeting Summarization Engine
 
 - **Directory:** [`assignment-03-meeting-summarizer/`](assignment-03-meeting-summarizer/)
 - **Core Engineering Problem:** Processing multi-speaker enterprise meeting transcripts of arbitrary length into structured executive briefs while handling context window limits and extracting clear, actionable accountability.
@@ -155,7 +156,7 @@ py -3.12 test_all_assignments.py
 
 ---
 
-### Case Study 04: Multi-Turn Conversational Event Assistant
+### Module 04: Multi-Turn Conversational Event Assistant
 
 - **Directory:** [`assignment-04-conversational-assistant/`](assignment-04-conversational-assistant/)
 - **Core Engineering Problem:** Architecting an intelligent conversational agent capable of preserving multi-turn dialogue history, performing in-context sentiment classification, and executing complex logistical math using Chain-of-Thought reasoning.
@@ -173,7 +174,7 @@ py -3.12 test_all_assignments.py
 
 ---
 
-### Case Study 05: Resilient Azure Function Calling and Batch Pipeline
+### Module 05: Resilient Azure Function Calling and Batch Pipeline
 
 - **Directory:** [`assignment-05-azure-function-calling/`](assignment-05-azure-function-calling/)
 - **Core Engineering Problem:** Executing high-volume batch LLM requests against Azure OpenAI while guaranteeing deterministic JSON structure, preventing HTTP 429 rate limit failures, and isolating item-level errors from breaking batch pipelines.
@@ -190,7 +191,7 @@ py -3.12 test_all_assignments.py
 
 ---
 
-### Case Study 06: Hybrid Two-Stage Delay Reason Classifier
+### Module 06: Hybrid Two-Stage Delay Reason Classifier
 
 - **Directory:** [`assignment-06-delay-reason-classification/`](assignment-06-delay-reason-classification/)
 - **Core Engineering Problem:** Categorizing messy, free-text logistics and maintenance delay logs into operational taxonomy categories while optimizing for inference latency and API expenditure.
@@ -209,7 +210,7 @@ py -3.12 test_all_assignments.py
 
 ---
 
-### Case Study 07: Neural Text-to-Speech (TTS) Inference Pipeline
+### Module 07: Neural Text-to-Speech (TTS) Inference Pipeline
 
 - **Directory:** [`assignment-07-huggingface-tts/`](assignment-07-huggingface-tts/)
 - **Core Engineering Problem:** Implementing a reliable speech synthesis inference pipeline from pre-trained Hugging Face neural acoustic models to produce broadcast-grade audio waveforms.
@@ -230,12 +231,12 @@ py -3.12 test_all_assignments.py
 ## Engineering Standards and Reliability
 
 ### 1. Dual-Mode Evaluation Resilience
-A common failure mode in academic and portfolio code is external API fragility: if a reviewer or automated CI test runs without active cloud credentials, scripts crash with unhandled exceptions. This portfolio solves this by engineering **function-level offline fallback engines** into every module. Each script functions seamlessly in both:
+A common failure mode in academic and project code is external API fragility: if a reviewer or automated CI test runs without active cloud credentials, scripts crash with unhandled exceptions. This project solves this by engineering **function-level offline fallback engines** into every module. Each script functions seamlessly in both:
 - **Live Cloud Mode:** Connects to Azure OpenAI / Hugging Face when credentials are configured.
 - **Verified Offline Mode:** Returns precomputed, verified domain responses when credentials are absent, enabling zero-configuration test runs.
 
 ### 2. Comprehensive Test Automation
-Every project includes a dedicated `test_assignment_0X.py` test suite alongside the master `test_all_assignments.py` test runner. The test suites cover:
+Every module includes a dedicated `test_assignment_0X.py` test suite alongside the master `test_all_assignments.py` test runner. The test suites cover:
 - Monotonic state manipulation and edge-case input handling.
 - Function return schema compliance and dictionary structure validation.
 - Tenacity retry loop behavior and HTTP 429 recovery simulation.
@@ -245,7 +246,7 @@ Every project includes a dedicated `test_assignment_0X.py` test suite alongside 
 
 ## Prompt Engineering Governance and Traceability
 
-High-performing AI engineering requires strict prompt version control and architectural documentation. Every AI module in this portfolio maintains two transparent specification files:
+High-performing AI engineering requires strict prompt version control and architectural documentation. Every AI module in this project maintains two transparent specification files:
 1. **`prompts.md`:** Documents the operational prompt engineering architecture used by the application, including system role definitions, few-shot demonstration pairs, chain-of-thought directives, and model parameter rationale (`temperature`, `top_p`).
 2. **`GENERATION_PROMPT.md`:** Documents the auto-refined meta-prompt used to design, architect, and harden the system against edge cases, ensuring complete engineering provenance and reproducibility.
 
@@ -255,8 +256,8 @@ High-performing AI engineering requires strict prompt version control and archit
 
 ```text
 .
-├── README.md                                    # Master portfolio documentation & technical guide
-├── test_all_assignments.py                      # Master audit test suite (validates all 7 systems)
+├── README.md                                    # Project documentation & technical guide
+├── test_all_assignments.py                      # Master audit test suite (validates all 7 modules)
 ├── .gitignore                                   # Python, cache, and local secret exclusion rules
 │
 ├── assignment-01-task-manager/
