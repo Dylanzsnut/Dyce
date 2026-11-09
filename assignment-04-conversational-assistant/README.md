@@ -22,6 +22,8 @@ assignment-04-conversational-assistant/
 ├── .env.example                               # Azure OpenAI credentials template
 ├── requirements.txt                           # Python dependencies (openai, python-dotenv)
 ├── conversational_assistant.py                # Main conversational application & CLI
+├── test_assignment_04.py                      # Automated test suite (5 double-check tests)
+├── GENERATION_PROMPT.md                       # Auto-refined prompt used to create this assignment
 ├── prompts.md                                 # Full prompt engineering specifications & templates
 ├── README.md                                  # Documentation and run instructions
 ├── all_sample_conversations.md                # Consolidated report of all 3 multi-turn scenarios

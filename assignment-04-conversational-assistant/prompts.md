@@ -2,6 +2,26 @@
 
 This document details the exact prompt architectures, system prompts, few-shot demonstration exemplars, chain-of-thought (CoT) reasoning triggers, and conversational context management strategies implemented in `conversational_assistant.py`.
 
+> [!NOTE]
+> For the **Auto-Refined Engineering Prompt** that was used to generate this entire assignment codebase and test suite, see **[`GENERATION_PROMPT.md`](GENERATION_PROMPT.md)**.
+
+---
+
+## 0. Meta-Prompt: Auto-Refined Assignment Engineering Prompt
+
+The application was built by transforming the user's initial instruction into this high-precision prompt:
+
+```text
+Build a Python 3.12 application implementing an Event Management Conversational Assistant using Azure OpenAI.
+Requirements:
+1. Message construction with system, user, and assistant roles.
+2. In-context few-shot sentiment analysis (Positive, Negative, Neutral/Mixed).
+3. Chain-of-thought (CoT) step-by-step reasoning for logistics and budgeting.
+4. Cumulative multi-turn context retention across follow-up turns.
+5. Offline demonstration fallback when Azure credentials are not present.
+6. Automated test suite and 3 complete verified scenario logs.
+```
+
 ---
 
 ## 1. System Prompt

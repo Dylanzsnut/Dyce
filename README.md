@@ -44,6 +44,8 @@ This repository contains the complete source code, test suites, documentation, a
 │
 └── assignment-04-conversational-assistant/
     ├── conversational_assistant.py  # Multi-turn assistant with advanced prompting
+    ├── test_assignment_04.py        # Automated test suite (5 double-check tests)
+    ├── GENERATION_PROMPT.md         # Auto-refined prompt used to create this assignment
     ├── prompts.md                   # Complete prompts specification & engineering guide
     ├── all_sample_conversations.md  # Consolidated report of 3 multi-turn scenarios
     ├── sample_outputs/              # 3 individual scenario conversation logs
