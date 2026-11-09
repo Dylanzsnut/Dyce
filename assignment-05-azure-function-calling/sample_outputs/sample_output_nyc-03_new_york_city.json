@@ -1,0 +1,56 @@
+{
+  "id": "NYC-03",
+  "destination": "New York City, USA",
+  "duration_days": 4,
+  "travel_style": "leisure",
+  "budget_tier": "budget",
+  "status": "SUCCESS",
+  "data": {
+    "destination": "New York City, USA",
+    "duration_days": 4,
+    "travel_style": "leisure",
+    "budget_tier": "budget",
+    "estimated_cost_usd": 850.0,
+    "daily_schedule": [
+      {
+        "day": 1,
+        "theme": "Midtown Icons & Urban Parks",
+        "morning_activity": "Walk Central Park from Bethesda Terrace to Strawberry Fields with a picnic bagel.",
+        "afternoon_activity": "Marvel at New York Public Library Rose Main Reading Room and Bryant Park.",
+        "evening_activity": "Take in the neon lights of Times Square and Grand Central Terminal constellation ceiling.",
+        "highlight_cuisine": "Everything bagel with scallion cream cheese and classic New York slice pizza."
+      },
+      {
+        "day": 2,
+        "theme": "Downtown History & Harbor Views",
+        "morning_activity": "Free Staten Island Ferry round-trip ride offering prime views of Statue of Liberty.",
+        "afternoon_activity": "Reflect at the 9/11 Memorial Plaza and walk through Wall Street and Oculus.",
+        "evening_activity": "Stroll across the iconic Brooklyn Bridge during sunset into DUMBO.",
+        "highlight_cuisine": "Coal-fired brick oven margherita pizza in Brooklyn."
+      },
+      {
+        "day": 3,
+        "theme": "Elevated Architecture & Vibrant Neighborhoods",
+        "morning_activity": "Walk the High Line elevated park from Hudson Yards to Chelsea Market.",
+        "afternoon_activity": "Explore Greenwich Village brownstones and Washington Square Park street performers.",
+        "evening_activity": "Browse bookshops in Soho and dine at historic Chinatown spots.",
+        "highlight_cuisine": "Steamed pork soup dumplings (xiaolongbao) and warm Portuguese egg tarts."
+      },
+      {
+        "day": 4,
+        "theme": "Arts, Culture & River Vistas",
+        "morning_activity": "Pay-what-you-wish or free morning entry to neighborhood cultural galleries.",
+        "afternoon_activity": "Walk along Brooklyn Heights Promenade with panoramic Lower Manhattan skyline views.",
+        "evening_activity": "Dessert and skyline night gazing from Gantry Plaza State Park in Queens.",
+        "highlight_cuisine": "Classic pastrami on rye sandwich and black-and-white cookies."
+      }
+    ],
+    "local_tips": [
+      "Use OMNY contactless tap-to-pay on subways; after 12 rides in a Monday-Sunday week, all additional rides are free.",
+      "Enjoy free iconic views from the Staten Island Ferry instead of expensive boat tours.",
+      "Walk across the bridges instead of taking taxis to avoid heavy traffic delays."
+    ]
+  },
+  "error": null,
+  "latency_seconds": 0.1
+}

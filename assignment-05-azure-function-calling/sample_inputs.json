@@ -1,0 +1,26 @@
+[
+  {
+    "id": "PAR-01",
+    "destination": "Paris, France",
+    "duration_days": 3,
+    "travel_style": "cultural",
+    "budget_tier": "moderate",
+    "prompt": "Create an immersive 3-day cultural and arts journey through Paris for a first-time visitor focusing on iconic landmarks, world-class museums, and classic bistro dining."
+  },
+  {
+    "id": "TYO-02",
+    "destination": "Tokyo, Japan",
+    "duration_days": 5,
+    "travel_style": "culinary",
+    "budget_tier": "luxury",
+    "prompt": "Design a 5-day gastronomy and modern culture itinerary in Tokyo emphasizing Michelin dining, historic Tsukiji street bites, futuristic Akihabara/Shinjuku, and serene traditional gardens."
+  },
+  {
+    "id": "NYC-03",
+    "destination": "New York City, USA",
+    "duration_days": 4,
+    "travel_style": "leisure",
+    "budget_tier": "budget",
+    "prompt": "Build a 4-day budget-friendly architectural and walking exploration of New York City covering Manhattan highlights, Central Park, Brooklyn Bridge strolls, and diverse neighborhood markets."
+  }
+]

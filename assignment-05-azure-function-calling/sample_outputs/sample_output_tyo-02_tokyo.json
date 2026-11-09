@@ -1,0 +1,64 @@
+{
+  "id": "TYO-02",
+  "destination": "Tokyo, Japan",
+  "duration_days": 5,
+  "travel_style": "culinary",
+  "budget_tier": "luxury",
+  "status": "SUCCESS",
+  "data": {
+    "destination": "Tokyo, Japan",
+    "duration_days": 5,
+    "travel_style": "culinary",
+    "budget_tier": "luxury",
+    "estimated_cost_usd": 3800.0,
+    "daily_schedule": [
+      {
+        "day": 1,
+        "theme": "Ancient Traditions & Street Bites",
+        "morning_activity": "Visit Senso-ji temple in Asakusa and stroll Nakamise Dori street stalls.",
+        "afternoon_activity": "Culinary food tour through Tsukiji Outer Market sampling fresh sashimi and tamagoyaki.",
+        "evening_activity": "Omakase sushi dinner at a Ginza multi-course sushi counter.",
+        "highlight_cuisine": "Otoro nigiri and uni flight with premium junmai daiginjo sake."
+      },
+      {
+        "day": 2,
+        "theme": "Subculture & Electric Dining",
+        "morning_activity": "Tour Akihabara electronic district and retro gaming arcades.",
+        "afternoon_activity": "Discover Ueno Park and the Tokyo National Museum culinary exhibit.",
+        "evening_activity": "Yakitori experience under the train tracks in Yurakucho / Ginza Corridor.",
+        "highlight_cuisine": "Charcoal-grilled binchotan tsukune with raw organic egg yolk."
+      },
+      {
+        "day": 3,
+        "theme": "Modern Pop Culture & Sky Views",
+        "morning_activity": "Cross Shibuya Scramble crossing and visit Meiji Shrine in Harajuku.",
+        "afternoon_activity": "Shop luxury fashion along Omotesando avenue and stop at artisanal matcha cafes.",
+        "evening_activity": "Cocktails at the Park Hyatt New York Bar overlooking Shinjuku skyline.",
+        "highlight_cuisine": "A5 Wagyu beef teppanyaki cooked tableside with wasabi salt."
+      },
+      {
+        "day": 4,
+        "theme": "Art, Architecture & Kaiseki",
+        "morning_activity": "Explore teamLab Planets digital interactive art museum in Toyosu.",
+        "afternoon_activity": "Visit Roppongi Hills Mori Art Museum and tranquil Mohri Garden.",
+        "evening_activity": "10-course seasonal Kaiseki dinner in Roppongi.",
+        "highlight_cuisine": "Traditional seasonal kaiseki featuring matsutake broth and sweetfish."
+      },
+      {
+        "day": 5,
+        "theme": "Tranquil Gardens & Farewell Ramen",
+        "morning_activity": "Walk through Shinjuku Gyoen National Garden and tea house ceremony.",
+        "afternoon_activity": "Souvenir hunting in Nihombashi traditional craft stores.",
+        "evening_activity": "Late night Tokyo ramen crawl in Shinjuku Golden Gai.",
+        "highlight_cuisine": "Rich tonkotsu broth ramen with handmade noodles and chashu."
+      }
+    ],
+    "local_tips": [
+      "Purchase a digital Suica or Pasmo IC card on Apple/Google Wallet for transit and convenience store payments.",
+      "Tipping is strictly not customary in Japan; exceptional service is already included.",
+      "Carry a small bag for your trash, as public waste bins are rare in Tokyo."
+    ]
+  },
+  "error": null,
+  "latency_seconds": 0.1
+}
