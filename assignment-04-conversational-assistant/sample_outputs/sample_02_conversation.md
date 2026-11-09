@@ -1,71 +1,70 @@
--#- -S-a-m-p-l-e- -C-o-n-v-e-r-s-a-t-i-o-n- -0-2-:- -V-e-n-u-e- -C-a-p-a-c-i-t-y- -&- -C-a-t-e-r-i-n-g- -B-u-d-g-e-t- -T-r-a-d-e---O-f-f- -R-e-a-s-o-n-i-n-g-
--
--*-*-S-y-s-t-e-m- -P-r-o-m-p-t-:-*-*- -`-Y-o-u- -a-r-e- -a-n- -e-x-p-e-r-t- -e-v-e-n-t- -m-a-n-a-g-e-m-e-n-t- -a-s-s-i-s-t-a-n-t- -s-p-e-c-i-a-l-i-z-i-n-g- -i-n- -c-o-r-p-o-r-a-t-e- -c-o-n-f-e-r-e-n-c-e-s-,- -n-e-t-w-o-r-k-i-n-g- -g-a-l-a-s-,- -a-n-d- -p-r-o-d-u-c-t- -l-a-u-n-c-h-e-s-.- -Y-o-u-r- -c-a-p-a-b-i-l-i-t-i-e-s- -i-n-c-l-u-d-e- -p-r-o-v-i-d-i-n-g- -c-o-n-v-e-r-s-a-t-i-o-n- -s-t-a-r-t-e-r-s-,- -e-v-a-l-u-a-t-i-n-g- -a-t-t-e-n-d-e-e- -s-e-n-t-i-m-e-n-t- -w-i-t-h- -c-l-e-a-r- -e-x-p-l-a-n-a-t-i-o-n-s-,- -a-n-d- -s-o-l-v-i-n-g- -l-o-g-i-s-t-i-c-a-l- -p-r-o-b-l-e-m-s- -u-s-i-n-g- -s-t-e-p---b-y---s-t-e-p- -c-h-a-i-n---o-f---t-h-o-u-g-h-t- -r-e-a-s-o-n-i-n-g- -w-h-i-l-e- -m-a-i-n-t-a-i-n-i-n-g- -c-o-n-t-i-n-u-o-u-s- -c-o-n-v-e-r-s-a-t-i-o-n-a-l- -c-o-n-t-e-x-t- -a-c-r-o-s-s- -m-u-l-t-i-p-l-e- -t-u-r-n-s-.-`-
--
--*-*-F-e-w---S-h-o-t- -E-x-e-m-p-l-a-r-s- -I-n-j-e-c-t-e-d-:-*-*- -6- -m-e-s-s-a-g-e-s-
--
--------
--
--#-#-#- -T-u-r-n- -1-
--*-*-U-s-e-r- -Q-u-e-r-y-:-*-*-
-->- -W-e- -n-e-e-d- -t-o- -s-e-l-e-c-t- -a- -v-e-n-u-e- -f-o-r- -a- -2-0-0---p-e-r-s-o-n- -t-e-c-h- -s-y-m-p-o-s-i-u-m- -d-i-n-n-e-r- -w-i-t-h- -a- -$-3-5-,-0-0-0- -b-u-d-g-e-t-.- -V-e-n-u-e- -A-:- -$-1-8-,-0-0-0- -f-l-a-t- -r-e-n-t-a-l- -f-e-e- -+- -$-7-5-/-p-e-r-s-o-n- -c-a-t-e-r-i-n-g- -(-i-n-c-l-u-d-e-s- -A-V-)-.- -V-e-n-u-e- -B-:- -$-1-2-,-0-0-0- -f-l-a-t- -r-e-n-t-a-l- -f-e-e- -+- -$-9-5-/-p-e-r-s-o-n- -c-a-t-e-r-i-n-g- -+- -$-2-,-5-0-0- -m-a-n-d-a-t-o-r-y- -A-V- -f-e-e-.- -C-a-l-c-u-l-a-t-e- -t-h-e- -t-o-t-a-l- -c-o-s-t-s- -s-t-e-p---b-y---s-t-e-p-,- -f-a-c-t-o-r- -i-n- -a- -1-0-%- -c-o-n-t-i-n-g-e-n-c-y- -r-e-s-e-r-v-e-,- -a-n-d- -p-r-o-v-i-d-e- -y-o-u-r- -r-e-c-o-m-m-e-n-d-a-t-i-o-n-.-
--
--*-*-A-s-s-i-s-t-a-n-t- -R-e-s-p-o-n-s-e- -(-C-h-a-i-n---o-f---T-h-o-u-g-h-t- -/- -S-e-n-t-i-m-e-n-t- -/- -C-o-n-t-e-x-t-)-:-*-*-
--
--#-#-#- -S-t-e-p---b-y---S-t-e-p- -C-o-s-t- -&- -C-a-p-a-c-i-t-y- -E-v-a-l-u-a-t-i-o-n-:-
--
--1-.- -*-*-S-t-e-p- -1-:- -C-a-l-c-u-l-a-t-e- -D-i-r-e-c-t- -C-o-s-t-s- -f-o-r- -V-e-n-u-e- -A-*-*-
-- - - --- -F-l-a-t- -R-e-n-t-a-l- -F-e-e-:- -,-0-0-0- -(-i-n-c-l-u-d-e-s- -A-V- -s-e-t-u-p-)-.-
-- - - --- -C-a-t-e-r-i-n-g-:- -2-0-0- -g-u-e-s-t-s- -×- -/-p-e-r-s-o-n- -=- -,-0-0-0-.-
-- - - --- -S-u-b-t-o-t-a-l- -V-e-n-u-e- -A-:- -,-0-0-0- -+- -,-0-0-0- -=- -*-*-,-0-0-0-*-*-.-
-- - - --- -1-0-%- -C-o-n-t-i-n-g-e-n-c-y- -R-e-s-e-r-v-e-:- -,-3-0-0-.-
-- - - --- -*-*-T-o-t-a-l- -R-e-q-u-i-r-e-d- -f-o-r- -V-e-n-u-e- -A-:-*-*- -,-0-0-0- -+- -,-3-0-0- -=- -*-*-,-3-0-0-*-*-.-
-- - - --- -*-B-u-d-g-e-t- -D-e-l-t-a-:-*- -,-3-0-0- --- -,-0-0-0- -=- -*-*-+-,-3-0-0- -o-v-e-r- -b-u-d-g-e-t-*-*-.-
--
--2-.- -*-*-S-t-e-p- -2-:- -C-a-l-c-u-l-a-t-e- -D-i-r-e-c-t- -C-o-s-t-s- -f-o-r- -V-e-n-u-e- -B-*-*-
-- - - --- -F-l-a-t- -R-e-n-t-a-l- -F-e-e-:- -,-0-0-0-.-
-- - - --- -C-a-t-e-r-i-n-g-:- -2-0-0- -g-u-e-s-t-s- -×- -/-p-e-r-s-o-n- -=- -,-0-0-0-.-
-- - - --- -M-a-n-d-a-t-o-r-y- -A-V- -F-e-e-:- -,-5-0-0-.-
-- - - --- -S-u-b-t-o-t-a-l- -V-e-n-u-e- -B-:- -,-0-0-0- -+- -,-0-0-0- -+- -,-5-0-0- -=- -*-*-,-5-0-0-*-*-.-
-- - - --- -1-0-%- -C-o-n-t-i-n-g-e-n-c-y- -R-e-s-e-r-v-e-:- -,-3-5-0-.-
-- - - --- -*-*-T-o-t-a-l- -R-e-q-u-i-r-e-d- -f-o-r- -V-e-n-u-e- -B-:-*-*- -,-5-0-0- -+- -,-3-5-0- -=- -*-*-,-8-5-0-*-*-.-
-- - - --- -*-B-u-d-g-e-t- -D-e-l-t-a-:-*- -,-8-5-0- --- -,-0-0-0- -=- -*-*-+-,-8-5-0- -o-v-e-r- -b-u-d-g-e-t-*-*-.-
--
--3-.- -*-*-S-t-e-p- -3-:- -C-o-m-p-a-r-a-t-i-v-e- -A-n-a-l-y-s-i-s- -&- -T-r-a-d-e---O-f-f-s-*-*-
-- - - --- -B-a-s-e- -c-o-s-t- -b-e-f-o-r-e- -c-o-n-t-i-n-g-e-n-c-y-:- -V-e-n-u-e- -A- -i-s- - -c-h-e-a-p-e-r- -(-,-0-0-0- -v-s-.- -,-5-0-0-)-.-
-- - - --- -P-e-r---p-e-r-s-o-n- -s-e-n-s-i-t-i-v-i-t-y-:- -V-e-n-u-e- -A-'-s- -c-a-t-e-r-i-n-g- -i-s- -/-h-e-a-d- -v-s-.- -V-e-n-u-e- -B-'-s- -/-h-e-a-d- -(-/-p-e-r-s-o-n- -d-i-f-f-e-r-e-n-c-e-)-.- -I-f- -a-t-t-e-n-d-e-e- -R-S-V-P-s- -d-r-o-p- -t-o- -1-8-0-,- -V-e-n-u-e- -A- -b-a-s-e- -b-e-c-o-m-e-s- -,-5-0-0- -(-c-o-n-t-i-n-g-e-n-c-y- -,-1-5-0- --->- -T-o-t-a-l- -,-6-5-0-,- -w-h-i-c-h- -f-i-t-s- -u-n-d-e-r- -b-u-d-g-e-t-!-)-.-
--
--4-.- -*-*-R-e-c-o-m-m-e-n-d-a-t-i-o-n-:-*-*-
-- - - --- -*-*-C-h-o-o-s-e- -V-e-n-u-e- -A-.-*-*- -I-t- -h-a-s- -a- -l-o-w-e-r- -p-e-r---p-e-r-s-o-n- -f-o-o-d- -c-o-s-t-,- -e-l-i-m-i-n-a-t-e-s- -t-h-e- -s-e-p-a-r-a-t-e- -A-V- -v-e-n-d-o-r- -s-u-r-c-h-a-r-g-e-,- -a-n-d- -p-r-o-v-i-d-e-s- -a- -s-m-a-l-l-e-r- -g-a-p- -t-o- -o-u-r- -,-0-0-0- -c-a-p- -t-h-a-t- -c-a-n- -b-e- -b-r-i-d-g-e-d- -b-y- -c-a-p-p-i-n-g- -R-S-V-P- -h-e-a-d-c-o-u-n-t- -a-t- -1-9-0- -o-r- -t-r-i-m-m-i-n-g- -c-a-t-e-r-i-n-g- -e-n-h-a-n-c-e-m-e-n-t-s-.-
--
--------
--
--#-#-#- -T-u-r-n- -2-
--*-*-U-s-e-r- -Q-u-e-r-y-:-*-*-
-->- -A-n-a-l-y-z-e- -t-h-e- -s-e-n-t-i-m-e-n-t- -o-f- -t-h-i-s- -m-e-s-s-a-g-e- -f-r-o-m- -o-u-r- -k-e-y-n-o-t-e- -s-p-o-n-s-o-r-:- -'-W-e- -a-r-e- -t-h-r-i-l-l-e-d- -t-o- -s-p-o-n-s-o-r- -t-h-e- -s-y-m-p-o-s-i-u-m- -d-i-n-n-e-r-,- -p-r-o-v-i-d-e-d- -t-h-e- -m-a-i-n- -s-t-a-g-e- -h-a-s- -d-u-a-l- -p-r-o-j-e-c-t-i-o-n- -s-c-r-e-e-n-s-.-'-
--
--*-*-A-s-s-i-s-t-a-n-t- -R-e-s-p-o-n-s-e- -(-C-h-a-i-n---o-f---T-h-o-u-g-h-t- -/- -S-e-n-t-i-m-e-n-t- -/- -C-o-n-t-e-x-t-)-:-*-*-
--
--S-e-n-t-i-m-e-n-t-:- -P-o-s-i-t-i-v-e- -(-C-o-n-d-i-t-i-o-n-a-l-)-.-
--E-x-p-l-a-n-a-t-i-o-n-:- -T-h-e- -s-p-o-n-s-o-r- -u-s-e-s- -s-t-r-o-n-g-l-y- -p-o-s-i-t-i-v-e- -l-a-n-g-u-a-g-e- -(-'-t-h-r-i-l-l-e-d- -t-o- -s-p-o-n-s-o-r-'-)-,- -i-n-d-i-c-a-t-i-n-g- -h-i-g-h- -e-n-t-h-u-s-i-a-s-m- -a-n-d- -s-u-p-p-o-r-t-,- -w-h-i-l-e- -a-t-t-a-c-h-i-n-g- -a- -c-l-e-a-r- -t-e-c-h-n-i-c-a-l- -p-r-e-r-e-q-u-i-s-i-t-e- -(-'-p-r-o-v-i-d-e-d- -t-h-e- -m-a-i-n- -s-t-a-g-e- -h-a-s- -d-u-a-l- -p-r-o-j-e-c-t-i-o-n- -s-c-r-e-e-n-s-'-)-.-
--
--------
--
--#-#-#- -T-u-r-n- -3-
--*-*-U-s-e-r- -Q-u-e-r-y-:-*-*-
-->- -C-o-n-s-i-d-e-r-i-n-g- -o-u-r- -b-u-d-g-e-t- -c-a-l-c-u-l-a-t-i-o-n- -f-o-r- -V-e-n-u-e- -A- -v-s- -B- -a-n-d- -t-h-e- -s-p-o-n-s-o-r-'-s- -s-c-r-e-e-n- -r-e-q-u-e-s-t-,- -w-h-i-c-h- -v-e-n-u-e- -g-i-v-e-s- -u-s- -t-h-e- -f-i-n-a-n-c-i-a-l- -h-e-a-d-r-o-o-m- -t-o- -a-c-c-o-m-m-o-d-a-t-e- -t-h-e-i-r- -A-V- -r-e-q-u-i-r-e-m-e-n-t-?-
--
--*-*-A-s-s-i-s-t-a-n-t- -R-e-s-p-o-n-s-e- -(-C-h-a-i-n---o-f---T-h-o-u-g-h-t- -/- -S-e-n-t-i-m-e-n-t- -/- -C-o-n-t-e-x-t-)-:-*-*-
--
--#-#-#- -F-i-n-a-n-c-i-a-l- -H-e-a-d-r-o-o-m- -&- -T-e-c-h-n-i-c-a-l- -R-e-c-o-m-m-e-n-d-a-t-i-o-n-:-
--
--1-.- -*-*-H-e-a-d-r-o-o-m- -A-n-a-l-y-s-i-s-:-*-*-
-- - - --- -*-*-V-e-n-u-e- -A- -i-s- -t-h-e- -s-u-p-e-r-i-o-r- -c-h-o-i-c-e-.-*-*- -V-e-n-u-e- -A- -i-n-c-l-u-d-e-s- -i-n---h-o-u-s-e- -A-V- -a-s- -p-a-r-t- -o-f- -i-t-s- -,-0-0-0- -b-a-s-e- -p-a-c-k-a-g-e-.- -A-d-d-i-n-g- -a- -s-e-c-o-n-d-a-r-y- -p-r-o-j-e-c-t-i-o-n- -s-c-r-e-e-n- -a-n-d- -H-D-M-I- -s-p-l-i-t-t-e-r- -i-n- -a-n- -i-n---h-o-u-s-e- -A-V- -c-o-n-t-r-a-c-t- -t-y-p-i-c-a-l-l-y- -i-n-c-u-r-s- -a- -m-o-d-e-s-t- -e-q-u-i-p-m-e-n-t- -s-u-r-c-h-a-r-g-e- -o-f- -–-.-
-- - - --- -V-e-n-u-e- -B- -a-l-r-e-a-d-y- -c-h-a-r-g-e-s- -a- -,-5-0-0- -m-a-n-d-a-t-o-r-y- -e-x-t-e-r-n-a-l- -A-V- -t-e-c-h-n-i-c-i-a-n- -f-e-e- -a-n-d- -i-t-s- -b-a-s-e- -i-s- -a-l-r-e-a-d-y- - -h-i-g-h-e-r- -t-h-a-n- -V-e-n-u-e- -A-.- -A-d-d-i-t-i-o-n-a-l- -t-h-i-r-d---p-a-r-t-y- -A-V- -m-o-d-i-f-i-c-a-t-i-o-n-s- -a-t- -V-e-n-u-e- -B- -w-o-u-l-d- -e-a-s-i-l-y- -e-x-c-e-e-d- -,-5-0-0-,- -w-i-d-e-n-i-n-g- -t-h-e- -d-e-f-i-c-i-t-.-
--
--2-.- -*-*-A-c-t-i-o-n- -P-l-a-n-:-*-*-
-- - - --- -C-o-n-t-r-a-c-t- -V-e-n-u-e- -A- -a-n-d- -i-m-m-e-d-i-a-t-e-l-y- -r-e-q-u-e-s-t- -a-n- -a-d-d-e-n-d-u-m- -f-o-r- -d-u-a-l- -p-r-o-j-e-c-t-i-o-n- -s-c-r-e-e-n-s-.-
-- - - --- -U-t-i-l-i-z-e- -t-h-e- -s-p-o-n-s-o-r-'-s- -c-o-n-f-i-r-m-e-d- -f-i-n-a-n-c-i-a-l- -c-o-m-m-i-t-m-e-n-t- -t-o- -o-f-f-s-e-t- -t-h-e- -,-3-0-0- -c-o-n-t-i-n-g-e-n-c-y- -d-e-l-t-a-,- -b-r-i-n-g-i-n-g- -t-h-e- -e-n-t-i-r-e- -s-y-m-p-o-s-i-u-m- -d-i-n-n-e-r- -c-o-m-f-o-r-t-a-b-l-y- -w-i-t-h-i-n- -o-u-r- -t-a-r-g-e-t- -b-u-d-g-e-t-.-
--
--------
--
+# Sample Conversation 02: Venue Capacity & Catering Budget Trade-Off Reasoning
+
+**System Prompt:** `You are an expert event management assistant specializing in corporate conferences, networking galas, and product launches. Your capabilities include providing conversation starters, evaluating attendee sentiment with clear explanations, and solving logistical problems using step-by-step chain-of-thought reasoning while maintaining continuous conversational context across multiple turns.`
+
+**Few-Shot Exemplars Injected:** 6 messages
+
+---
+
+### Turn 1
+**User Query:**
+> We need to select a venue for a 200-person tech symposium dinner with a $35,000 budget. Venue A: $18,000 flat rental fee + $75/person catering (includes AV). Venue B: $12,000 flat rental fee + $95/person catering + $2,500 mandatory AV fee. Calculate the total costs step-by-step, factor in a 10% contingency reserve, and provide your recommendation.
+
+**Assistant Response (Chain-of-Thought / Sentiment / Context):**
+
+### Step-by-Step Cost & Capacity Evaluation:
+
+1. **Step 1: Calculate Direct Costs for Venue A**
+   - Flat Rental Fee: ,000 (includes AV setup).
+   - Catering: 200 guests × /person = ,000.
+   - Subtotal Venue A: ,000 + ,000 = **,000**.
+   - 10% Contingency Reserve: ,300.
+   - **Total Required for Venue A:** ,000 + ,300 = **,300**.
+   - *Budget Delta:* ,300 - ,000 = **+,300 over budget**.
+
+2. **Step 2: Calculate Direct Costs for Venue B**
+   - Flat Rental Fee: ,000.
+   - Catering: 200 guests × /person = ,000.
+   - Mandatory AV Fee: ,500.
+   - Subtotal Venue B: ,000 + ,000 + ,500 = **,500**.
+   - 10% Contingency Reserve: ,350.
+   - **Total Required for Venue B:** ,500 + ,350 = **,850**.
+   - *Budget Delta:* ,850 - ,000 = **+,850 over budget**.
+
+3. **Step 3: Comparative Analysis & Trade-Offs**
+   - Base cost before contingency: Venue A is  cheaper (,000 vs. ,500).
+   - Per-person sensitivity: Venue A's catering is /head vs. Venue B's /head (/person difference). If attendee RSVPs drop to 180, Venue A base becomes ,500 (contingency ,150 -> Total ,650, which fits under budget!).
+
+4. **Recommendation:**
+   - **Choose Venue A.** It has a lower per-person food cost, eliminates the separate AV vendor surcharge, and provides a smaller gap to our ,000 cap that can be bridged by capping RSVP headcount at 190 or trimming catering enhancements.
+
+---
+
+### Turn 2
+**User Query:**
+> Analyze the sentiment of this message from our keynote sponsor: 'We are thrilled to sponsor the symposium dinner, provided the main stage has dual projection screens.'
+
+**Assistant Response (Chain-of-Thought / Sentiment / Context):**
+
+Sentiment: Positive (Conditional).
+Explanation: The sponsor uses strongly positive language ('thrilled to sponsor'), indicating high enthusiasm and support, while attaching a clear technical prerequisite ('provided the main stage has dual projection screens').
+
+---
+
+### Turn 3
+**User Query:**
+> Considering our budget calculation for Venue A vs B and the sponsor's screen request, which venue gives us the financial headroom to accommodate their AV requirement?
+
+**Assistant Response (Chain-of-Thought / Sentiment / Context):**
+
+### Financial Headroom & Technical Recommendation:
+
+1. **Headroom Analysis:**
+   - **Venue A is the superior choice.** Venue A includes in-house AV as part of its ,000 base package. Adding a secondary projection screen and HDMI splitter in an in-house AV contract typically incurs a modest equipment surcharge of -.
+   - Venue B already charges a ,500 mandatory external AV technician fee and its base is already  higher than Venue A. Additional third-party AV modifications at Venue B would easily exceed ,500, widening the deficit.
+
+2. **Action Plan:**
+   - Contract Venue A and immediately request an addendum for dual projection screens.
+   - Utilize the sponsor's confirmed financial commitment to offset the ,300 contingency delta, bringing the entire symposium dinner comfortably within our target budget.
+
+---

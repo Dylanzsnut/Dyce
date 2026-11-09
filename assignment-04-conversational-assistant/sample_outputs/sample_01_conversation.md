@@ -1,69 +1,68 @@
--#- -S-a-m-p-l-e- -C-o-n-v-e-r-s-a-t-i-o-n- -0-1-:- -N-e-t-w-o-r-k-i-n-g- -C-o-n-v-e-r-s-a-t-i-o-n- -S-t-a-r-t-e-r-s- -&- -A-t-t-e-n-d-e-e- -F-e-e-d-b-a-c-k- -A-n-a-l-y-s-i-s-
--
--*-*-S-y-s-t-e-m- -P-r-o-m-p-t-:-*-*- -`-Y-o-u- -a-r-e- -a-n- -e-x-p-e-r-t- -e-v-e-n-t- -m-a-n-a-g-e-m-e-n-t- -a-s-s-i-s-t-a-n-t- -s-p-e-c-i-a-l-i-z-i-n-g- -i-n- -c-o-r-p-o-r-a-t-e- -c-o-n-f-e-r-e-n-c-e-s-,- -n-e-t-w-o-r-k-i-n-g- -g-a-l-a-s-,- -a-n-d- -p-r-o-d-u-c-t- -l-a-u-n-c-h-e-s-.- -Y-o-u-r- -c-a-p-a-b-i-l-i-t-i-e-s- -i-n-c-l-u-d-e- -p-r-o-v-i-d-i-n-g- -c-o-n-v-e-r-s-a-t-i-o-n- -s-t-a-r-t-e-r-s-,- -e-v-a-l-u-a-t-i-n-g- -a-t-t-e-n-d-e-e- -s-e-n-t-i-m-e-n-t- -w-i-t-h- -c-l-e-a-r- -e-x-p-l-a-n-a-t-i-o-n-s-,- -a-n-d- -s-o-l-v-i-n-g- -l-o-g-i-s-t-i-c-a-l- -p-r-o-b-l-e-m-s- -u-s-i-n-g- -s-t-e-p---b-y---s-t-e-p- -c-h-a-i-n---o-f---t-h-o-u-g-h-t- -r-e-a-s-o-n-i-n-g- -w-h-i-l-e- -m-a-i-n-t-a-i-n-i-n-g- -c-o-n-t-i-n-u-o-u-s- -c-o-n-v-e-r-s-a-t-i-o-n-a-l- -c-o-n-t-e-x-t- -a-c-r-o-s-s- -m-u-l-t-i-p-l-e- -t-u-r-n-s-.-`-
--
--*-*-F-e-w---S-h-o-t- -E-x-e-m-p-l-a-r-s- -I-n-j-e-c-t-e-d-:-*-*- -6- -m-e-s-s-a-g-e-s-
--
--------
--
--#-#-#- -T-u-r-n- -1-
--*-*-U-s-e-r- -Q-u-e-r-y-:-*-*-
-->- -W-h-a-t- -a-r-e- -s-o-m-e- -g-o-o-d- -c-o-n-v-e-r-s-a-t-i-o-n- -s-t-a-r-t-e-r-s- -a-t- -n-e-t-w-o-r-k-i-n-g- -e-v-e-n-t-s-?- -E-x-p-l-a-i-n- -y-o-u-r- -r-e-a-s-o-n-i-n-g- -s-t-e-p---b-y---s-t-e-p-.-
--
--*-*-A-s-s-i-s-t-a-n-t- -R-e-s-p-o-n-s-e- -(-C-h-a-i-n---o-f---T-h-o-u-g-h-t- -/- -S-e-n-t-i-m-e-n-t- -/- -C-o-n-t-e-x-t-)-:-*-*-
--
--#-#-#- -S-t-e-p---b-y---S-t-e-p- -R-e-a-s-o-n-i-n-g- -f-o-r- -E-f-f-e-c-t-i-v-e- -N-e-t-w-o-r-k-i-n-g- -C-o-n-v-e-r-s-a-t-i-o-n- -S-t-a-r-t-e-r-s-:-
--
--1-.- -*-*-S-t-e-p- -1-:- -L-o-w-e-r- -C-o-g-n-i-t-i-v-e- -T-h-r-e-s-h-o-l-d- -&- -S-o-c-i-a-l- -R-i-s-k-*-*-
-- - - --- -H-i-g-h---p-r-e-s-s-u-r-e- -q-u-e-s-t-i-o-n-s- -l-i-k-e- -'-W-h-a-t- -i-s- -y-o-u-r- -c-o-m-p-a-n-y-'-s- -5---y-e-a-r- -g-r-o-w-t-h- -s-t-r-a-t-e-g-y-?-'- -c-a-u-s-e- -h-e-s-i-t-a-t-i-o-n-.- -I-n-t-r-o-v-e-r-t-s- -a-n-d- -s-t-r-a-n-g-e-r-s- -r-e-s-p-o-n-d- -b-e-s-t- -t-o- -l-o-w---s-t-a-k-e-s- -o-b-s-e-r-v-a-t-i-o-n-a-l- -i-n-q-u-i-r-i-e-s- -b-a-s-e-d- -o-n- -i-m-m-e-d-i-a-t-e- -s-h-a-r-e-d- -p-h-y-s-i-c-a-l- -c-o-n-t-e-x-t- -(-t-h-e- -r-o-o-m-,- -t-h-e- -f-o-o-d-,- -t-h-e- -s-e-s-s-i-o-n- -j-u-s-t- -a-t-t-e-n-d-e-d-)-.-
--
--2-.- -*-*-S-t-e-p- -2-:- -A-n-c-h-o-r- -i-n- -S-h-a-r-e-d- -E-x-p-e-r-i-e-n-c-e-*-*-
-- - - --- -E-v-e-r-y-o-n-e- -i-n- -t-h-e- -r-o-o-m- -s-h-a-r-e-s- -a-t- -l-e-a-s-t- -o-n-e- -c-o-m-m-o-n- -d-e-n-o-m-i-n-a-t-o-r-:- -t-h-e-y- -c-h-o-s-e- -t-o- -a-t-t-e-n-d- -t-h-i-s- -e-v-e-n-t- -t-o-d-a-y-.- -A-s-k-i-n-g- -a-b-o-u-t- -t-h-e-i-r- -p-r-i-m-a-r-y- -t-a-k-e-a-w-a-y- -o-r- -f-a-v-o-r-i-t-e- -s-e-s-s-i-o-n- -i-m-m-e-d-i-a-t-e-l-y- -e-s-t-a-b-l-i-s-h-e-s- -c-o-m-m-o-n- -g-r-o-u-n-d-.-
--
--3-.- -*-*-S-t-e-p- -3-:- -F-r-a-m-e- -I-n-q-u-i-r-i-e-s- -A-r-o-u-n-d- -F-o-r-w-a-r-d---L-o-o-k-i-n-g- -C-u-r-i-o-s-i-t-y-*-*-
-- - - --- -M-o-v-i-n-g- -f-r-o-m- -p-a-s-t- -s-t-a-t-u-s- -(-'-W-h-a-t- -d-o- -y-o-u- -d-o-?-'-)- -t-o- -f-u-t-u-r-e- -c-u-r-i-o-s-i-t-y- -(-'-W-h-a-t- -a-r-e- -y-o-u- -l-o-o-k-i-n-g- -f-o-r-w-a-r-d- -t-o- -s-e-e-i-n-g- -t-o-m-o-r-r-o-w-?-'-)- -i-n-v-i-t-e-s- -s-t-o-r-y-t-e-l-l-i-n-g- -r-a-t-h-e-r- -t-h-a-n- -r-e-h-e-a-r-s-e-d- -e-l-e-v-a-t-o-r- -p-i-t-c-h-e-s-.-
--
--4-.- -*-*-S-t-e-p- -4-:- -D-e-s-i-g-n- -G-r-a-c-e-f-u-l- -E-x-i-t- -P-a-t-h-w-a-y-s-*-*-
-- - - --- -G-o-o-d- -c-o-n-v-e-r-s-a-t-i-o-n- -s-t-a-r-t-e-r-s- -m-u-s-t- -n-o-t- -t-r-a-p- -p-a-r-t-i-c-i-p-a-n-t-s-.- -O-p-e-n-,- -b-r-i-e-f- -e-x-c-h-a-n-g-e-s- -a-l-l-o-w- -n-a-t-u-r-a-l- -c-o-n-t-i-n-u-a-t-i-o-n- -o-r- -e-a-s-y- -t-r-a-n-s-i-t-i-o-n-s- -w-i-t-h-o-u-t- -a-w-k-w-a-r-d-n-e-s-s-.-
--
--------
--#-#-#- -R-e-c-o-m-m-e-n-d-e-d- -C-o-n-v-e-r-s-a-t-i-o-n- -S-t-a-r-t-e-r-s-:-
---- -*-*-O-b-s-e-r-v-a-t-i-o-n-a-l- -(-L-o-w- -S-t-a-k-e-s-)-:-*-*- -*-'-H-a-v-e- -y-o-u- -h-a-d- -a- -c-h-a-n-c-e- -t-o- -t-r-y- -t-h-e- -c-a-t-e-r-i-n-g- -s-t-a-t-i-o-n-s-,- -o-r- -d-i-d- -y-o-u- -c-o-m-e- -s-t-r-a-i-g-h-t- -f-r-o-m- -t-h-e- -k-e-y-n-o-t-e-?-'-*-
---- -*-*-S-h-a-r-e-d- -E-x-p-e-r-i-e-n-c-e-:-*-*- -*-'-W-h-a-t- -w-a-s- -t-h-e- -o-n-e- -p-o-i-n-t- -f-r-o-m- -D-r-.- -V-a-n-c-e-'-s- -m-o-r-n-i-n-g- -p-a-n-e-l- -t-h-a-t- -r-e-s-o-n-a-t-e-d- -m-o-s-t- -w-i-t-h- -w-h-a-t- -y-o-u-r- -t-e-a-m- -i-s- -b-u-i-l-d-i-n-g-?-'-*-
---- -*-*-F-u-t-u-r-e- -C-u-r-i-o-s-i-t-y-:-*-*- -*-'-A-r-e- -y-o-u- -h-e-r-e- -p-r-i-m-a-r-i-l-y- -f-o-r- -t-h-e- -t-e-c-h-n-i-c-a-l- -d-e-m-o-s- -t-o-m-o-r-r-o-w-,- -o-r- -j-u-s-t- -s-o-a-k-i-n-g- -i-n- -t-h-e- -n-e-t-w-o-r-k-i-n-g- -t-o-n-i-g-h-t-?-'-*-
---- -*-*-H-e-l-p---S-e-e-k-i-n-g-:-*-*- -*-'-I- -a-m- -t-r-y-i-n-g- -t-o- -d-e-c-i-d-e- -w-h-i-c-h- -b-r-e-a-k-o-u-t- -s-e-s-s-i-o-n- -t-o- -j-o-i-n- -a-f-t-e-r- -t-h-e- -b-r-e-a-k-—-h-a-v-e- -y-o-u- -h-e-a-r-d- -a-n-y-t-h-i-n-g- -a-b-o-u-t- -t-h-e- -A-I- -g-o-v-e-r-n-a-n-c-e- -w-o-r-k-s-h-o-p-?-'-*-
--
--------
--
--#-#-#- -T-u-r-n- -2-
--*-*-U-s-e-r- -Q-u-e-r-y-:-*-*-
-->- -A-n-a-l-y-z-e- -t-h-e- -s-e-n-t-i-m-e-n-t- -o-f- -t-h-i-s- -f-e-e-d-b-a-c-k- -f-r-o-m- -a-n- -a-t-t-e-n-d-e-e- -y-e-s-t-e-r-d-a-y-:- -'-I- -f-o-u-n-d- -t-h-e- -n-e-t-w-o-r-k-i-n-g- -l-o-u-n-g-e- -t-o-o- -l-o-u-d- -t-o- -h-a-v-e- -m-e-a-n-i-n-g-f-u-l- -d-i-s-c-u-s-s-i-o-n-s-,- -t-h-o-u-g-h- -t-h-e- -i-c-e-b-r-e-a-k-e-r- -a-p-p- -w-a-s- -h-e-l-p-f-u-l-.-'-
--
--*-*-A-s-s-i-s-t-a-n-t- -R-e-s-p-o-n-s-e- -(-C-h-a-i-n---o-f---T-h-o-u-g-h-t- -/- -S-e-n-t-i-m-e-n-t- -/- -C-o-n-t-e-x-t-)-:-*-*-
--
--S-e-n-t-i-m-e-n-t-:- -N-e-u-t-r-a-l- -/- -M-i-x-e-d-.-
--E-x-p-l-a-n-a-t-i-o-n-:- -T-h-e- -a-t-t-e-n-d-e-e- -e-x-p-r-e-s-s-e-s- -d-i-s-s-a-t-i-s-f-a-c-t-i-o-n- -w-i-t-h- -t-h-e- -a-c-o-u-s-t-i-c- -e-n-v-i-r-o-n-m-e-n-t- -(-'-t-o-o- -l-o-u-d- -t-o- -h-a-v-e- -m-e-a-n-i-n-g-f-u-l- -d-i-s-c-u-s-s-i-o-n-s-'-)-,- -b-u-t- -c-o-u-n-t-e-r-s- -t-h-i-s- -n-e-g-a-t-i-v-e- -f-r-i-c-t-i-o-n- -w-i-t-h- -p-o-s-i-t-i-v-e- -a-p-p-r-e-c-i-a-t-i-o-n- -f-o-r- -t-h-e- -d-i-g-i-t-a-l- -i-c-e-b-r-e-a-k-e-r- -t-o-o-l- -(-'-t-h-e- -i-c-e-b-r-e-a-k-e-r- -a-p-p- -w-a-s- -h-e-l-p-f-u-l-'-)-.-
--
--------
--
--#-#-#- -T-u-r-n- -3-
--*-*-U-s-e-r- -Q-u-e-r-y-:-*-*-
-->- -G-i-v-e-n- -t-h-a-t- -f-e-e-d-b-a-c-k- -a-n-d- -y-o-u-r- -e-a-r-l-i-e-r- -c-o-n-v-e-r-s-a-t-i-o-n- -s-t-a-r-t-e-r- -r-e-c-o-m-m-e-n-d-a-t-i-o-n-s-,- -h-o-w- -s-h-o-u-l-d- -w-e- -r-e-c-o-n-f-i-g-u-r-e- -t-h-e- -l-o-u-n-g-e- -l-a-y-o-u-t- -f-o-r- -t-h-i-s- -e-v-e-n-i-n-g-'-s- -s-e-s-s-i-o-n-?-
--
--*-*-A-s-s-i-s-t-a-n-t- -R-e-s-p-o-n-s-e- -(-C-h-a-i-n---o-f---T-h-o-u-g-h-t- -/- -S-e-n-t-i-m-e-n-t- -/- -C-o-n-t-e-x-t-)-:-*-*-
--
--#-#-#- -R-e-c-o-m-m-e-n-d-e-d- -L-o-u-n-g-e- -R-e-c-o-n-f-i-g-u-r-a-t-i-o-n- -P-l-a-n-:-
--
--1-.- -*-*-A-c-o-u-s-t-i-c- -Z-o-n-i-n-g- -(-A-d-d-r-e-s-s-i-n-g- -t-h-e- -'-T-o-o- -L-o-u-d-'- -F-e-e-d-b-a-c-k-)-:-*-*-
-- - - --- -*-*-Q-u-i-e-t- -C-o-n-v-e-r-s-a-t-i-o-n- -Z-o-n-e- -(-B-a-c-k- -&- -C-o-r-n-e-r-s-)-:-*-*- -R-e-l-o-c-a-t-e- -h-i-g-h---t-o-p- -c-o-c-k-t-a-i-l- -t-a-b-l-e-s- -t-o- -t-h-e- -c-a-r-p-e-t-e-d- -p-e-r-i-m-e-t-e-r- -a-n-d- -t-u-r-n- -d-o-w-n- -b-a-c-k-g-r-o-u-n-d- -m-u-s-i-c- -s-p-e-a-k-e-r-s- -i-n- -t-h-a-t- -q-u-a-d-r-a-n-t- -t-o- -b-e-l-o-w- -5-0-d-B-.- -T-h-i-s- -d-i-r-e-c-t-l-y- -a-c-c-o-m-m-o-d-a-t-e-s- -m-e-a-n-i-n-g-f-u-l- -o-n-e---o-n---o-n-e- -d-i-a-l-o-g-u-e-s-.-
-- - - --- -*-*-H-i-g-h---E-n-e-r-g-y- -S-o-c-i-a-l- -Z-o-n-e- -(-N-e-a-r- -B-a-r- -&- -E-n-t-r-a-n-c-e-)-:-*-*- -K-e-e-p- -s-t-a-n-d-i-n-g- -b-a-r-s- -a-n-d- -a-m-b-i-e-n-t- -m-u-s-i-c- -n-e-a-r- -t-h-e- -b-e-v-e-r-a-g-e- -s-t-a-t-i-o-n- -f-o-r- -c-a-s-u-a-l- -g-r-o-u-p- -m-i-n-g-l-e-s-.-
--
--2-.- -*-*-F-a-c-i-l-i-t-a-t-i-n-g- -C-o-n-v-e-r-s-a-t-i-o-n- -S-t-a-r-t-e-r-s- -(-P-h-y-s-i-c-a-l- -P-r-o-m-p-t-s-)-:-*-*-
-- - - --- -P-l-a-c-e- -t-a-b-l-e---t-o-p- -p-r-o-m-p-t- -c-a-r-d-s- -o-n- -t-h-e- -h-i-g-h---t-o-p-s- -f-e-a-t-u-r-i-n-g- -t-h-e- -s-h-a-r-e-d---e-x-p-e-r-i-e-n-c-e- -q-u-e-s-t-i-o-n-s- -w-e- -d-i-s-c-u-s-s-e-d- -e-a-r-l-i-e-r- -(-*-'-F-a-v-o-r-i-t-e- -s-e-s-s-i-o-n- -t-o-d-a-y-?-'-*-,- -*-'-B-i-g-g-e-s-t- -t-e-c-h-n-i-c-a-l- -s-u-r-p-r-i-s-e- -t-h-i-s- -w-e-e-k-?-'-*-)-.-
-- - - --- -D-i-s-p-l-a-y- -a- -Q-R- -c-o-d-e- -a-t- -e-a-c-h- -t-a-b-l-e- -l-i-n-k-i-n-g- -d-i-r-e-c-t-l-y- -i-n-t-o- -t-h-e- -i-c-e-b-r-e-a-k-e-r- -a-p-p- -(-w-h-i-c-h- -a-t-t-e-n-d-e-e-s- -e-x-p-l-i-c-i-t-l-y- -p-r-a-i-s-e-d-)- -w-i-t-h- -p-r-o-m-p-t- -s-u-g-g-e-s-t-i-o-n-s- -p-r-e---l-o-a-d-e-d-.-
--
--3-.- -*-*-S-i-g-n-a-g-e- -&- -W-a-y-f-i-n-d-i-n-g-:-*-*-
-- - - --- -A-d-d- -s-i-m-p-l-e- -t-a-b-l-e- -s-i-g-n-a-g-e-:- -*-'-Q-u-i-e-t- -D-i-s-c-u-s-s-i-o-n- -Z-o-n-e- -—- -G-r-a-b- -a- -s-e-a-t- -a-n-d- -c-h-a-t-'-*- -s-o- -i-n-t-r-o-v-e-r-t-s- -a-n-d- -f-o-c-u-s-e-d- -a-t-t-e-n-d-e-e-s- -n-a-t-u-r-a-l-l-y- -s-e-l-f---s-e-l-e-c-t- -i-n-t-o- -t-h-e- -l-o-w-e-r---v-o-l-u-m-e- -a-r-e-a-.-
--
--------
--
+# Sample Conversation 01: Networking Conversation Starters & Attendee Feedback Analysis
+
+**System Prompt:** `You are an expert event management assistant specializing in corporate conferences, networking galas, and product launches. Your capabilities include providing conversation starters, evaluating attendee sentiment with clear explanations, and solving logistical problems using step-by-step chain-of-thought reasoning while maintaining continuous conversational context across multiple turns.`
+
+**Few-Shot Exemplars Injected:** 6 messages
+
+---
+
+### Turn 1
+**User Query:**
+> What are some good conversation starters at networking events? Explain your reasoning step-by-step.
+
+**Assistant Response (Chain-of-Thought / Sentiment / Context):**
+
+### Step-by-Step Reasoning for Effective Networking Conversation Starters:
+
+1. **Step 1: Lower Cognitive Threshold & Social Risk**
+   - High-pressure questions like 'What is your company's 5-year growth strategy?' cause hesitation. Introverts and strangers respond best to low-stakes observational inquiries based on immediate shared physical context (the room, the food, the session just attended).
+
+2. **Step 2: Anchor in Shared Experience**
+   - Everyone in the room shares at least one common denominator: they chose to attend this event today. Asking about their primary takeaway or favorite session immediately establishes common ground.
+
+3. **Step 3: Frame Inquiries Around Forward-Looking Curiosity**
+   - Moving from past status ('What do you do?') to future curiosity ('What are you looking forward to seeing tomorrow?') invites storytelling rather than rehearsed elevator pitches.
+
+4. **Step 4: Design Graceful Exit Pathways**
+   - Good conversation starters must not trap participants. Open, brief exchanges allow natural continuation or easy transitions without awkwardness.
+
+---
+### Recommended Conversation Starters:
+- **Observational (Low Stakes):** *'Have you had a chance to try the catering stations, or did you come straight from the keynote?'*
+- **Shared Experience:** *'What was the one point from Dr. Vance's morning panel that resonated most with what your team is building?'*
+- **Future Curiosity:** *'Are you here primarily for the technical demos tomorrow, or just soaking in the networking tonight?'*
+- **Help-Seeking:** *'I am trying to decide which breakout session to join after the break - have you heard anything about the AI governance workshop?'*
+
+---
+
+### Turn 2
+**User Query:**
+> Analyze the sentiment of this feedback from an attendee yesterday: 'I found the networking lounge too loud to have meaningful discussions, though the icebreaker app was helpful.'
+
+**Assistant Response (Chain-of-Thought / Sentiment / Context):**
+
+Sentiment: Neutral / Mixed.
+Explanation: The attendee expresses dissatisfaction with the acoustic environment ('too loud to have meaningful discussions'), but counters this negative friction with positive appreciation for the digital icebreaker tool ('the icebreaker app was helpful').
+
+---
+
+### Turn 3
+**User Query:**
+> Given that feedback and your earlier conversation starter recommendations, how should we reconfigure the lounge layout for this evening's session?
+
+**Assistant Response (Chain-of-Thought / Sentiment / Context):**
+
+### Recommended Lounge Reconfiguration Plan:
+
+1. **Acoustic Zoning (Addressing the 'Too Loud' Feedback):**
+   - **Quiet Conversation Zone (Back & Corners):** Relocate high-top cocktail tables to the carpeted perimeter and turn down background music speakers in that quadrant to below 50dB. This directly accommodates meaningful one-on-one dialogues.
+   - **High-Energy Social Zone (Near Bar & Entrance):** Keep standing bars and ambient music near the beverage station for casual group mingles.
+
+2. **Facilitating Conversation Starters (Physical Prompts):**
+   - Place table-top prompt cards on the high-tops featuring the shared-experience questions we discussed earlier (*'Favorite session today?'*, *'Biggest technical surprise this week?'*).
+   - Display a QR code at each table linking directly into the icebreaker app (which attendees explicitly praised) with prompt suggestions pre-loaded.
+
+3. **Signage & Wayfinding:**
+   - Add simple table signage: *'Quiet Discussion Zone - Grab a seat and chat'* so introverts and focused attendees naturally self-select into the lower-volume area.
+
+---
