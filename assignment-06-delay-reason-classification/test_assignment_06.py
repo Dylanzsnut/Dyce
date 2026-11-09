@@ -59,9 +59,12 @@ def test_sanitizer_resilience():
     assert lc.sanitize_category("Traffic") == "Traffic"
     assert lc.sanitize_category("  traffic. ") == "Traffic"
     assert lc.sanitize_category('"Vehicle Issue"') == "Vehicle Issue"
+    assert lc.sanitize_category("**Weather**") == "Weather"
+    assert lc.sanitize_category("`Customer Issue`") == "Customer Issue"
     assert lc.sanitize_category("The most appropriate category is Weather.") == "Weather"
     assert lc.sanitize_category("Predicted Category: Technical System Failure") == "Technical System Failure"
     assert lc.sanitize_category("Completely unrecognized nonsense") == "Other"
+    assert lc.sanitize_category(None) == "Other"
     print("[PASS] Test 3: Output sanitizer and normalizer verified.")
 
 
@@ -86,7 +89,12 @@ def test_ten_sample_logs_classification():
         assert res["log"] == log_text
         assert res["final"] == expected_category, f"Log: '{log_text}' -> Expected: {expected_category}, Got: {res['final']}"
 
-    print("[PASS] Test 4: All 10 course sample log entries classified correctly.")
+    # Test pipeline with empty/None/whitespace inputs
+    assert lc.classify_log("") == {"log": "", "initial": "Other", "final": "Other"}
+    assert lc.classify_log("   ") == {"log": "   ", "initial": "Other", "final": "Other"}
+    assert lc.classify_log(None) == {"log": None, "initial": "Other", "final": "Other"}
+
+    print("[PASS] Test 4: All 10 course sample log entries and extreme edge cases classified correctly.")
 
 
 def test_llm_refinement_mock_correction():

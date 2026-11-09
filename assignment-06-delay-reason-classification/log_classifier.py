@@ -149,9 +149,12 @@ deployment_name = os.getenv("AZURE_OPENAI_DEPLOYMENT_NAME", "gpt-4o-mini")
 def sanitize_category(raw_output: str) -> str:
     """
     Normalizes and validates model output against allowed CATEGORIES.
-    Guards against conversational filler (e.g. 'Category: Traffic').
+    Guards against conversational filler (e.g. 'Category: Traffic') and markdown formatting.
     """
-    cleaned = raw_output.strip().strip('"').strip("'").strip(".")
+    if not isinstance(raw_output, str):
+        return "Other"
+
+    cleaned = raw_output.strip().strip('"').strip("'").strip(".").strip("*").strip("`").strip("_")
 
     # Exact match check
     for cat in CATEGORIES:
@@ -177,13 +180,21 @@ def refine_classification(
     Step 3: Refines or confirms the initial classification using Azure OpenAI Chat Completions.
     Falls back to deterministic offline mapping when credentials are not configured.
     """
+    # Guard against non-string, empty or whitespace-only inputs
+    if not isinstance(text, str) or not text.strip():
+        return initial_label if initial_label in CATEGORIES else "Other"
+
     effective_client = active_client if active_client is not None else globals().get("client")
     effective_deployment = active_deployment or globals().get("deployment_name", "gpt-4o-mini")
 
     # Offline Demonstration Fallback
     if effective_client is None:
+        clean_text = text.strip().lower()
         for known_entry, label in OFFLINE_EXPECTED_MAPPINGS.items():
-            if known_entry.lower() in text.lower() or text.lower() in known_entry.lower():
+            known_clean = known_entry.strip().lower()
+            if clean_text == known_clean:
+                return label
+            if len(clean_text) >= 5 and (known_clean in clean_text or clean_text in known_clean):
                 return label
         return initial_label if initial_label in CATEGORIES else "Other"
 
