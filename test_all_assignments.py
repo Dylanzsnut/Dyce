@@ -63,7 +63,9 @@ def audit_assignment_01():
     assert tm.mark_completed(True) is False  # Guard against bool == 1
     assert tm.delete_task(1) is True
     assert tm.delete_task(1) is False
+    assert (a1_dir / "GENERATION_PROMPT.md").exists(), "GENERATION_PROMPT.md missing in A1"
     print("  -> Edge cases (string ID, bool rejection, empty lookups) pass.")
+    print("  -> GENERATION_PROMPT.md verified.")
     print("  [PASS] Assignment 01: 100% OK.")
 
 
@@ -103,7 +105,10 @@ def audit_assignment_02():
         assert "Safety Precautions" in r["generated_work_instruction"]
         assert "Step-by-Step Procedure" in r["generated_work_instruction"]
         assert "Acceptance Criteria" in r["generated_work_instruction"]
+    assert (a2_dir / "GENERATION_PROMPT.md").exists(), "GENERATION_PROMPT.md missing in A2"
+    assert (a2_dir / "prompts.md").exists(), "prompts.md missing in A2"
     print("  -> 5 sample SOP outputs & formatting pass.")
+    print("  -> prompts.md & GENERATION_PROMPT.md verified.")
     print("  [PASS] Assignment 02: 100% OK.")
 
 
@@ -134,7 +139,10 @@ def audit_assignment_03():
     res = run_cmd([sys.executable, str(script)], cwd=a3_dir)
     assert res.returncode == 0
     assert "Notice: Azure OpenAI credentials not detected" in res.stdout
+    assert (a3_dir / "GENERATION_PROMPT.md").exists(), "GENERATION_PROMPT.md missing in A3"
+    assert (a3_dir / "prompts.md").exists(), "prompts.md missing in A3"
     print("  -> 5 transcripts, 5 outputs, and offline demonstration pass.")
+    print("  -> prompts.md & GENERATION_PROMPT.md verified.")
     print("  [PASS] Assignment 03: 100% OK.")
 
 
