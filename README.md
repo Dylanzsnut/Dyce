@@ -38,26 +38,26 @@ The suite integrates seven core modules engineered around modular separation of 
 
 ```mermaid
 flowchart TD
-    subgraph Data & State Foundation
-        M1[Module 01: CLI State Manager] -->|Monotonic State Machine| S1[In-Memory Task Store]
+    subgraph DataAndState["Data and State Foundation"]
+        M1["Module 01: CLI State Manager"] -->|"Monotonic State Machine"| S1["In-Memory Task Store"]
     end
 
-    subgraph LLM Orchestration & Advanced Prompting
-        M2[Module 02: Automotive SOP Agent] -->|Persona + One-Shot Structural Prompt| S2[Standardized Factory SOPs]
-        M3[Module 03: Meeting Summarizer] -->|Map-Reduce Context Chunking| S3[Executive Briefs & Action Items]
-        M4[Module 04: Conversational Assistant] -->|Few-Shot Exemplars + CoT Reasoning| S4[Multi-Turn Dialogue Context]
+    subgraph LLMOrchestration["LLM Orchestration and Advanced Prompting"]
+        M2["Module 02: Automotive SOP Agent"] -->|"Persona + One-Shot Structural Prompt"| S2["Standardized Factory SOPs"]
+        M3["Module 03: Meeting Summarizer"] -->|"Map-Reduce Context Chunking"| S3["Executive Briefs and Action Items"]
+        M4["Module 04: Conversational Assistant"] -->|"Few-Shot Exemplars + CoT Reasoning"| S4["Multi-Turn Dialogue Context"]
     end
 
-    subgraph Resilient Cloud APIs & Cost Optimization
-        M5[Module 05: Function Calling Pipeline] -->|Tenacity Jittered Backoff + Tools Schema| S5[Deterministic Itinerary Schemas]
-        M6[Module 06: Hybrid Delay Classifier] -->|Stage 1: Sub-millisecond Regex Triage| T1{Ambiguous?}
-        T1 -->|No: 80% Volume| S6A[Instant Classification: Sub-1ms, $0 Cost]
-        T1 -->|Yes: 20% Volume| S6B[Stage 2: Azure OpenAI LLM Verification]
+    subgraph CloudResilience["Resilient Cloud APIs and Cost Optimization"]
+        M5["Module 05: Function Calling Pipeline"] -->|"Tenacity Jittered Backoff + Tools Schema"| S5["Deterministic Itinerary Schemas"]
+        M6["Module 06: Hybrid Delay Classifier"] -->|"Stage 1: Sub-millisecond Regex Triage"| T1{"Ambiguous?"}
+        T1 -->|"No (80% Volume)"| S6A["Instant Classification: Sub-1ms, 0 USD Cost"]
+        T1 -->|"Yes (20% Volume)"| S6B["Stage 2: Azure OpenAI LLM Verification"]
     end
 
-    subgraph Neural Acoustic Speech Synthesis
-        M7[Module 07: TTS Inference Pipeline] -->|FastSpeech 2 Acoustic Model| Mel[Mel Spectrogram]
-        Mel -->|HiFi-GAN Neural Vocoder| Audio[22,050 Hz 16-Bit Mono PCM WAV]
+    subgraph SpeechSynthesis["Neural Acoustic Speech Synthesis"]
+        M7["Module 07: TTS Inference Pipeline"] -->|"FastSpeech 2 Acoustic Model"| Mel["Mel Spectrogram"]
+        Mel -->|"HiFi-GAN Neural Vocoder"| Audio["22,050 Hz 16-Bit Mono PCM WAV"]
     end
 ```
 
@@ -111,8 +111,8 @@ py -3.12 test_all_assignments.py
 
 ## System Modules Matrix
 
-| Module | Core Domain / Focus | Key Technologies | Primary Script | Dedicated Test Suite | Prompt Specs | Outputs / Deliverables | Status |
-| :-: | :--- | :--- | :--- | :--- | :--- | :--- | :-: |
+| # | Module Name | Core Domain / Focus | Key Technologies | Primary Script | Dedicated Test Suite | Prompt Specs | Outputs / Deliverables | Status |
+| :-: | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :-: |
 | **01** | **State Manager** | CLI state lifecycle, monotonic ID safety | Python 3.12, Defensive I/O | [`task_manager.py`](assignment-01-task-manager/task_manager.py) | [`test_assignment_01.py`](assignment-01-task-manager/test_assignment_01.py) | [`GENERATION_PROMPT.md`](assignment-01-task-manager/GENERATION_PROMPT.md) | Terminal CLI | **PASS** |
 | **02** | **SOP Generator** | Automotive manufacturing SOP generation | Azure OpenAI, Persona Prompting | [`work_instruction_agent.py`](assignment-02-work-instructions/work_instruction_agent.py) | [`test_assignment_02.py`](assignment-02-work-instructions/test_assignment_02.py) | [`prompts.md`](assignment-02-work-instructions/prompts.md) | [`SOP Cards (.md)`](assignment-02-work-instructions/generated_work_instructions.md), [`SOP Export (.csv)`](assignment-02-work-instructions/generated_work_instructions.csv) | **PASS** |
 | **03** | **Meeting Summarizer** | Enterprise meeting transcript distillation | Transcript NLP, Map-Reduce | [`meeting_summarizer.py`](assignment-03-meeting-summarizer/meeting_summarizer.py) | [`test_assignment_03.py`](assignment-03-meeting-summarizer/test_assignment_03.py) | [`prompts.md`](assignment-03-meeting-summarizer/prompts.md) | [`sample_outputs/`](assignment-03-meeting-summarizer/sample_outputs/), [`all_summaries.md`](assignment-03-meeting-summarizer/all_sample_summaries.md) | **PASS** |
@@ -212,12 +212,12 @@ sequenceDiagram
 
 ```mermaid
 flowchart LR
-    A[Raw Maintenance Log] --> B[Stage 1: Heuristic Keyword Triage]
-    B --> C{Unambiguous Match?}
-    C -->|Yes: 80% Volume| D[Direct Categorization: Sub-1ms, $0.00 Cost]
-    C -->|No: Ambiguous| E[Stage 2: Azure OpenAI LLM Refinement: temp=0]
-    E --> F[Category Whitelist Sanitizer]
-    F --> G[Standardized Operational Category]
+    A["Raw Maintenance Log"] --> B["Stage 1: Heuristic Keyword Triage"]
+    B --> C{"Unambiguous Match?"}
+    C -->|"Yes (80% Volume)"| D["Direct Categorization: Sub-1ms, 0 USD Cost"]
+    C -->|"No (Ambiguous)"| E["Stage 2: Azure OpenAI LLM Refinement (temp=0)"]
+    E --> F["Category Whitelist Sanitizer"]
+    F --> G["Standardized Operational Category"]
 ```
 
   - Whitelist output sanitization enforcing exact taxonomy values: `Traffic`, `Weather`, `Mechanical Issue`, `Customer Delay`, `Documentation / Customs`, or `Unknown`.
@@ -235,11 +235,11 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-    A[Text String] --> B[TTSHubInterface Tokenization]
-    B --> C[FastSpeech 2 Acoustic Inference]
-    C --> D[Intermediate Mel Spectrogram]
-    D --> E[HiFi-GAN Neural Vocoding]
-    E --> F[22,050 Hz 16-Bit Mono PCM RIFF WAV]
+    A["Text String"] --> B["TTSHubInterface Tokenization"]
+    B --> C["FastSpeech 2 Acoustic Inference"]
+    C --> D["Intermediate Mel Spectrogram"]
+    D --> E["HiFi-GAN Neural Vocoding"]
+    E --> F["22,050 Hz 16-Bit Mono PCM RIFF WAV"]
 ```
 
   - Dual interfaces: production CLI script (`tts_inference.py`) and an interactive Jupyter Notebook (`tts_inference.ipynb`) with in-browser audio playback (`IPython.display.Audio`).
@@ -363,6 +363,7 @@ High-reliability AI systems require full traceability between application prompt
 │   ├── generated_work_instructions.csv          # Structured CSV export of SOP records
 │   ├── prompts.md                               # System prompt & one-shot engineering guide
 │   ├── GENERATION_PROMPT.md                     # Meta-prompt specification
+│   ├── .env.example                             # Azure OpenAI environment template
 │   ├── requirements.txt                         # Dependency definitions
 │   └── README.md                                # Manufacturing case study & reflection
 │
@@ -374,6 +375,7 @@ High-reliability AI systems require full traceability between application prompt
 │   ├── sample_outputs/                          # 5 structured Markdown executive summaries
 │   ├── prompts.md                               # Structured output schemas & prompts
 │   ├── GENERATION_PROMPT.md                     # Meta-prompt specification
+│   ├── .env.example                             # Azure OpenAI environment template
 │   ├── requirements.txt                         # Dependency definitions
 │   └── README.md                                # Usage documentation & architecture
 │
@@ -384,6 +386,7 @@ High-reliability AI systems require full traceability between application prompt
 │   ├── sample_outputs/                          # 3 scenario conversation logs
 │   ├── prompts.md                               # Few-shot & Chain-of-Thought prompting guide
 │   ├── GENERATION_PROMPT.md                     # Meta-prompt specification
+│   ├── .env.example                             # Azure OpenAI environment template
 │   ├── requirements.txt                         # Dependency definitions
 │   └── README.md                                # Technical documentation
 │
@@ -395,6 +398,7 @@ High-reliability AI systems require full traceability between application prompt
 │   ├── all_sample_itineraries.md                # Consolidated presentation report
 │   ├── prompts.md                               # Function schemas & backoff specifications
 │   ├── GENERATION_PROMPT.md                     # Meta-prompt specification
+│   ├── .env.example                             # Azure OpenAI environment template
 │   ├── requirements.txt                         # Dependency definitions (tenacity, openai)
 │   └── README.md                                # Retry architecture documentation
 │
@@ -406,6 +410,7 @@ High-reliability AI systems require full traceability between application prompt
 │   ├── classification_results.csv               # Structured tabular CSV export
 │   ├── prompts.md                               # Refinement prompt & RAG trade-off analysis
 │   ├── GENERATION_PROMPT.md                     # Meta-prompt specification
+│   ├── .env.example                             # Azure OpenAI environment template
 │   ├── requirements.txt                         # Dependency definitions
 │   └── README.md                                # Architecture documentation
 │

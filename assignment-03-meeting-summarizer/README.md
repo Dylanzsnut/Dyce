@@ -27,6 +27,9 @@ assignment-03-meeting-summarizer/
 ├── .env.example                               # Template for Azure OpenAI credentials
 ├── requirements.txt                           # Python dependencies (openai, python-dotenv)
 ├── meeting_summarizer.py                      # Main application script
+├── test_assignment_03.py                      # Automated test suite (4 validation tests)
+├── prompts.md                                 # System prompts & structured output schema
+├── GENERATION_PROMPT.md                       # Auto-refined meta-prompt specification
 ├── README.md                                  # Documentation and run instructions
 ├── all_sample_summaries.md                    # Consolidated view of 5 transcripts + outputs
 ├── sample_transcripts/                        # 5 realistic, multi-speaker test transcripts
