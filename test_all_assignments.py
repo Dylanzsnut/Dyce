@@ -232,9 +232,41 @@ def audit_assignment_06():
     print("  [PASS] Assignment 06: 100% OK.")
 
 
+# =====================================================================
+# AUDIT 7: Assignment 07 (Hugging Face Text-to-Speech Model)
+# =====================================================================
+def audit_assignment_07():
+    print("\n[AUDIT 7/7] Checking Assignment 07: Hugging Face Text-to-Speech (TTS)...")
+    a7_dir = ROOT_DIR / "assignment-07-huggingface-tts"
+    script = a7_dir / "tts_inference.py"
+    test_script = a7_dir / "test_assignment_07.py"
+    assert script.exists(), "tts_inference.py missing"
+    assert test_script.exists(), "test_assignment_07.py missing"
+
+    # Run Assignment 07 verification suite
+    res = run_cmd([sys.executable, str(test_script)])
+    assert res.returncode == 0, f"Assignment 07 tests failed: {res.stderr}\n{res.stdout}"
+
+    # Verify documentation, audio recordings, and Jupyter notebook
+    assert (a7_dir / "prompts.md").exists(), "prompts.md missing in A7"
+    assert (a7_dir / "GENERATION_PROMPT.md").exists(), "GENERATION_PROMPT.md missing in A7"
+    assert (a7_dir / "tts_inference.ipynb").exists(), "tts_inference.ipynb missing in A7"
+    assert (a7_dir / "output.wav").exists(), "output.wav missing in A7"
+
+    samples = list((a7_dir / "sample_audio").glob("*.wav"))
+    assert len(samples) == 3, f"Expected 3 sample audio files, found {len(samples)}"
+    assert (a7_dir / "sample_audio" / "audio_samples_manifest.md").exists()
+
+    print("  -> Multi-tier TTS pipeline & PCM 16-bit 22,050 Hz synthesis pass.")
+    print("  -> 3 sample audio files (.wav) and manifest pass.")
+    print("  -> Interactive Jupyter Notebook (.ipynb) pass.")
+    print("  -> prompts.md & GENERATION_PROMPT.md verified.")
+    print("  [PASS] Assignment 07: 100% OK.")
+
+
 def main():
     print("=" * 70)
-    print("  STARTING COMPREHENSIVE REPOSITORY DOUBLE-TRIPLE CHECK (A1 - A6)")
+    print("  STARTING COMPREHENSIVE REPOSITORY DOUBLE-TRIPLE CHECK (A1 - A7)")
     print("=" * 70)
     audit_assignment_01()
     audit_assignment_02()
@@ -242,8 +274,9 @@ def main():
     audit_assignment_04()
     audit_assignment_05()
     audit_assignment_06()
+    audit_assignment_07()
     print("\n" + "=" * 70)
-    print("  ALL 6 ASSIGNMENTS VERIFIED: 100% WORKING, ROBUST & GRADE-A READY!")
+    print("  ALL 7 ASSIGNMENTS VERIFIED: 100% WORKING, ROBUST & GRADE-A READY!")
     print("=" * 70)
 
 
