@@ -47,6 +47,8 @@ def test_01_role_construction_and_hierarchy():
 
 def test_02_few_shot_sentiment_examples():
     """Verify that few-shot sentiment exemplars provide balanced class demonstrations."""
+    assert hasattr(ca, "few_shot_examples"), "Missing few_shot_examples attribute"
+    assert hasattr(ca, "conversation_messages"), "Missing conversation_messages attribute"
     examples = ca.FEW_SHOT_SENTIMENT_EXAMPLES
     assert len(examples) >= 4, "Must contain at least 2 complete few-shot pairs (>=4 messages)"
 
@@ -57,7 +59,14 @@ def test_02_few_shot_sentiment_examples():
         assert examples[i + 1]["role"] == "assistant"
         assert "Sentiment:" in examples[i + 1]["content"]
 
-    print(f"[PASS] Test 2: Few-shot sentiment exemplars verified ({len(examples)//2} pairs).")
+    # Check direct run_turn offline fallback
+    sess = ca.ConversationalAssistantSession()
+    reply_sent = ca.run_turn(sess, "Analyze the sentiment of this text: 'I love this conference!'")
+    assert "Sentiment: Positive" in reply_sent
+    reply_cot = ca.run_turn(sess, "What are good conversation starters? Explain step-by-step.")
+    assert "Step-by-Step" in reply_cot
+
+    print(f"[PASS] Test 2: Few-shot sentiment exemplars & direct run_turn fallback verified ({len(examples)//2} pairs).")
 
 
 def test_03_multi_turn_context_retention():

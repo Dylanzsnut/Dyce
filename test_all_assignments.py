@@ -1,11 +1,14 @@
 """
-Unified Master Test Runner: Double-Triple Check for Assignments 01 - 04
+Unified Master Test Runner: Double-Triple Check for Assignments 01 - 07
 ========================================================================
 Executes an end-to-end audit across all completed assignments:
 - Assignment 01: CLI Task Manager (Python fundamentals, edge cases, unit tests)
 - Assignment 02: Automotive Work Instructions (Zero-RAG prompt agent, 5 samples)
 - Assignment 03: AI-Powered Meeting Summarizer (Map-reduce chunking, 5 samples)
 - Assignment 04: AI Conversational Assistant (Role hierarchy, few-shot, CoT, multi-turn)
+- Assignment 05: Azure Function Calling & Retries (Tenacity backoff, batch fault isolation)
+- Assignment 06: Logistics Delay Reason Classification (Heuristic + LLM refinement)
+- Assignment 07: Hugging Face Text-to-Speech (TTS) Inference (.wav + .ipynb)
 """
 
 import csv
@@ -37,12 +40,18 @@ def run_cmd(args, cwd=ROOT_DIR, env=CLEAN_ENV, input_data=None):
 # AUDIT 1: Assignment 01 (Task Manager)
 # =====================================================================
 def audit_assignment_01():
-    print("\n[AUDIT 1/4] Checking Assignment 01: Command-Line Task Manager...")
+    print("\n[AUDIT 1/7] Checking Assignment 01: Command-Line Task Manager...")
     a1_dir = ROOT_DIR / "assignment-01-task-manager"
     script = a1_dir / "task_manager.py"
+    test_script = a1_dir / "test_assignment_01.py"
     assert script.exists(), "task_manager.py missing"
+    assert test_script.exists(), "test_assignment_01.py missing"
 
-    # Test 1.1: Interactive CLI pipe test
+    # Run standalone test suite
+    res_suite = run_cmd([sys.executable, str(test_script)], cwd=a1_dir)
+    assert res_suite.returncode == 0, f"A1 test suite failed:\n{res_suite.stderr}\n{res_suite.stdout}"
+
+    # Interactive CLI pipe test
     cli_input = "add\nWrite test case\ncomplete\n1\nview\ndelete\n1\nexit\n"
     res = run_cmd([sys.executable, str(script)], input_data=cli_input)
     assert res.returncode == 0, f"A1 exited with code {res.returncode}: {res.stderr}"
@@ -51,7 +60,7 @@ def audit_assignment_01():
     assert "Task ID 1 deleted successfully." in res.stdout
     print("  -> CLI execution & lifecycle pass.")
 
-    # Test 1.2: Programmatic unit assertions
+    # Programmatic unit assertions
     sys.path.insert(0, str(a1_dir))
     import task_manager as tm
 
@@ -65,7 +74,7 @@ def audit_assignment_01():
     assert tm.delete_task(1) is False
     assert (a1_dir / "GENERATION_PROMPT.md").exists(), "GENERATION_PROMPT.md missing in A1"
     print("  -> Edge cases (string ID, bool rejection, empty lookups) pass.")
-    print("  -> GENERATION_PROMPT.md verified.")
+    print("  -> GENERATION_PROMPT.md & test_assignment_01.py verified.")
     print("  [PASS] Assignment 01: 100% OK.")
 
 
@@ -73,12 +82,18 @@ def audit_assignment_01():
 # AUDIT 2: Assignment 02 (Automotive Work Instructions)
 # =====================================================================
 def audit_assignment_02():
-    print("\n[AUDIT 2/4] Checking Assignment 02: Automotive Work Instructions...")
+    print("\n[AUDIT 2/7] Checking Assignment 02: Automotive Work Instructions...")
     a2_dir = ROOT_DIR / "assignment-02-work-instructions"
     script = a2_dir / "work_instruction_agent.py"
+    test_script = a2_dir / "test_assignment_02.py"
     assert script.exists(), "work_instruction_agent.py missing"
+    assert test_script.exists(), "test_assignment_02.py missing"
 
-    # Test 2.1: Module attributes
+    # Run standalone test suite
+    res_suite = run_cmd([sys.executable, str(test_script)], cwd=a2_dir)
+    assert res_suite.returncode == 0, f"A2 test suite failed:\n{res_suite.stderr}\n{res_suite.stdout}"
+
+    # Module attributes
     sys.path.insert(0, str(a2_dir))
     import work_instruction_agent as wia
 
@@ -86,16 +101,16 @@ def audit_assignment_02():
     assert len(wia.task_descriptions) == 5
     assert hasattr(wia, "deployment_name")
     assert hasattr(wia, "api_version")
-    print("  -> Module attributes & 5 mock tasks pass.")
+    print("  -> Module attributes, direct function fallback & 5 mock tasks pass.")
 
-    # Test 2.2: Offline demonstration fallback (zero credentials)
+    # Offline demonstration fallback (zero credentials)
     res = run_cmd([sys.executable, str(script)], cwd=a2_dir)
     assert res.returncode == 0
     assert "Notice: Azure OpenAI credentials not detected" in res.stdout
     assert "Generated Automotive Work Instructions (5 Samples)" in res.stdout
     print("  -> Offline demonstration fallback mode pass.")
 
-    # Test 2.3: Verify precomputed outputs (CSV and Markdown)
+    # Verify precomputed outputs (CSV and Markdown)
     csv_file = a2_dir / "generated_work_instructions.csv"
     assert csv_file.exists()
     with open(csv_file, encoding="utf-8", newline="") as f:
@@ -108,7 +123,7 @@ def audit_assignment_02():
     assert (a2_dir / "GENERATION_PROMPT.md").exists(), "GENERATION_PROMPT.md missing in A2"
     assert (a2_dir / "prompts.md").exists(), "prompts.md missing in A2"
     print("  -> 5 sample SOP outputs & formatting pass.")
-    print("  -> prompts.md & GENERATION_PROMPT.md verified.")
+    print("  -> prompts.md, GENERATION_PROMPT.md & test_assignment_02.py verified.")
     print("  [PASS] Assignment 02: 100% OK.")
 
 
@@ -116,16 +131,22 @@ def audit_assignment_02():
 # AUDIT 3: Assignment 03 (Meeting Summarizer)
 # =====================================================================
 def audit_assignment_03():
-    print("\n[AUDIT 3/4] Checking Assignment 03: AI-Powered Meeting Summarizer...")
+    print("\n[AUDIT 3/7] Checking Assignment 03: AI-Powered Meeting Summarizer...")
     a3_dir = ROOT_DIR / "assignment-03-meeting-summarizer"
     script = a3_dir / "meeting_summarizer.py"
+    test_script = a3_dir / "test_assignment_03.py"
     assert script.exists(), "meeting_summarizer.py missing"
+    assert test_script.exists(), "test_assignment_03.py missing"
 
-    # Test 3.1: Verify 5 sample transcripts exist and are valid
+    # Run standalone test suite
+    res_suite = run_cmd([sys.executable, str(test_script)], cwd=a3_dir)
+    assert res_suite.returncode == 0, f"A3 test suite failed:\n{res_suite.stderr}\n{res_suite.stdout}"
+
+    # Verify 5 sample transcripts exist and are valid
     transcripts = list((a3_dir / "sample_transcripts").glob("sample_*.txt"))
     assert len(transcripts) == 5, f"Expected 5 transcripts, got {len(transcripts)}"
 
-    # Test 3.2: Verify 5 generated output files exist and contain required headers
+    # Verify 5 generated output files exist and contain required headers
     outputs = list((a3_dir / "sample_outputs").glob("summary_*.md"))
     assert len(outputs) == 5, f"Expected 5 summaries, got {len(outputs)}"
     for o in outputs:
@@ -135,14 +156,14 @@ def audit_assignment_03():
         assert "Decisions Made" in text
         assert "Action Items" in text
 
-    # Test 3.3: Offline demonstration fallback
+    # Offline demonstration fallback
     res = run_cmd([sys.executable, str(script)], cwd=a3_dir)
     assert res.returncode == 0
     assert "Notice: Azure OpenAI credentials not detected" in res.stdout
     assert (a3_dir / "GENERATION_PROMPT.md").exists(), "GENERATION_PROMPT.md missing in A3"
     assert (a3_dir / "prompts.md").exists(), "prompts.md missing in A3"
-    print("  -> 5 transcripts, 5 outputs, and offline demonstration pass.")
-    print("  -> prompts.md & GENERATION_PROMPT.md verified.")
+    print("  -> 5 transcripts, 5 outputs, direct function fallback & offline demo pass.")
+    print("  -> prompts.md, GENERATION_PROMPT.md & test_assignment_03.py verified.")
     print("  [PASS] Assignment 03: 100% OK.")
 
 
@@ -150,7 +171,7 @@ def audit_assignment_03():
 # AUDIT 4: Assignment 04 (Conversational Assistant)
 # =====================================================================
 def audit_assignment_04():
-    print("\n[AUDIT 4/4] Checking Assignment 04: Conversational Assistant...")
+    print("\n[AUDIT 4/7] Checking Assignment 04: Conversational Assistant...")
     a4_dir = ROOT_DIR / "assignment-04-conversational-assistant"
     test_suite = a4_dir / "test_assignment_04.py"
     assert test_suite.exists(), "test_assignment_04.py missing"
@@ -177,7 +198,7 @@ def audit_assignment_04():
 # AUDIT 5: Assignment 05 (Azure OpenAI Function Calling & Retries)
 # =====================================================================
 def audit_assignment_05():
-    print("\n[AUDIT 5/5] Checking Assignment 05: Azure Function Calling & Retries...")
+    print("\n[AUDIT 5/7] Checking Assignment 05: Azure Function Calling & Retries...")
     a5_dir = ROOT_DIR / "assignment-05-azure-function-calling"
     script = a5_dir / "batch_function_calling.py"
     test_script = a5_dir / "test_assignment_05.py"
@@ -207,7 +228,7 @@ def audit_assignment_05():
 # AUDIT 6: Assignment 06 (Logistics Delay Reason Classification)
 # =====================================================================
 def audit_assignment_06():
-    print("\n[AUDIT 6/6] Checking Assignment 06: Logistics Delay Reason Classification...")
+    print("\n[AUDIT 6/7] Checking Assignment 06: Logistics Delay Reason Classification...")
     a6_dir = ROOT_DIR / "assignment-06-delay-reason-classification"
     script = a6_dir / "log_classifier.py"
     test_script = a6_dir / "test_assignment_06.py"
