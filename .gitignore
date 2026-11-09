@@ -33,6 +33,13 @@ wheels/
 .coverage
 htmlcov/
 
+# Exclude unrelated scratch projects & scripts
+antigravity-prompt-floating-helper/
+roblox-starter/
+temp_skills/
+myQuiz*
+*.user.js
+
 # IDE & OS
 .vscode/
 .idea/

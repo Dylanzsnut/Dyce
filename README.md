@@ -41,6 +41,18 @@ This repository contains the complete source code, test suites, documentation, a
     ├── .env.example                 # Azure OpenAI environment variable template
     ├── requirements.txt             # Dependencies (openai, python-dotenv)
     └── README.md                    # Assignment 3 documentation & usage guide
+│
+└── assignment-04-conversational-assistant/
+    ├── conversational_assistant.py  # Multi-turn assistant with advanced prompting
+    ├── prompts.md                   # Complete prompts specification & engineering guide
+    ├── all_sample_conversations.md  # Consolidated report of 3 multi-turn scenarios
+    ├── sample_outputs/              # 3 individual scenario conversation logs
+    │   ├── sample_01_conversation.md
+    │   ├── sample_02_conversation.md
+    │   └── sample_03_conversation.md
+    ├── .env.example                 # Azure OpenAI environment variable template
+    ├── requirements.txt             # Dependencies (openai, python-dotenv)
+    └── README.md                    # Assignment 4 documentation & prompting guide
 ```
 
 ---
@@ -69,4 +81,12 @@ This repository contains the complete source code, test suites, documentation, a
 - **Run:**
   ```powershell
   py -3.12 assignment-03-meeting-summarizer/meeting_summarizer.py
+  ```
+
+### 4. Assignment 04: AI-Powered Conversational Assistant with Advanced Prompting
+- **Language/Framework:** Python 3.12, Azure OpenAI (`gpt-4o-mini`, `temperature=0.7`)
+- **Features:** Simulates an Event Management Assistant using role-based message construction (`system`, `user`, `assistant`), few-shot exemplars for in-context attendee sentiment analysis, chain-of-thought (CoT) step-by-step reasoning for logistics, and continuous multi-turn context retention. Includes full prompt documentation in `prompts.md`.
+- **Run:**
+  ```powershell
+  py -3.12 assignment-04-conversational-assistant/conversational_assistant.py
   ```
