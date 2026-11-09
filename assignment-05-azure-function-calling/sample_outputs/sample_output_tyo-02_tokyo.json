@@ -1,6 +1,7 @@
 {
   "id": "TYO-02",
   "destination": "Tokyo, Japan",
+  "days": 5,
   "duration_days": 5,
   "travel_style": "culinary",
   "budget_tier": "luxury",
@@ -57,7 +58,8 @@
       "Purchase a digital Suica or Pasmo IC card on Apple/Google Wallet for transit and convenience store payments.",
       "Tipping is strictly not customary in Japan; exceptional service is already included.",
       "Carry a small bag for your trash, as public waste bins are rare in Tokyo."
-    ]
+    ],
+    "days": 5
   },
   "error": null,
   "latency_seconds": 0.1

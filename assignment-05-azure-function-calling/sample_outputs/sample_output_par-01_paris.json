@@ -1,6 +1,7 @@
 {
   "id": "PAR-01",
   "destination": "Paris, France",
+  "days": 3,
   "duration_days": 3,
   "travel_style": "cultural",
   "budget_tier": "moderate",
@@ -41,7 +42,8 @@
       "Use the Paris Metro Navigo Easy pass for seamless underground transit.",
       "Book Louvre and Eiffel Tower time slots at least 2 weeks in advance.",
       "Always greet shopkeepers with 'Bonjour Madame/Monsieur' upon entering."
-    ]
+    ],
+    "days": 3
   },
   "error": null,
   "latency_seconds": 0.1

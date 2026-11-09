@@ -26,7 +26,7 @@ def test_function_schema_structure():
     params = schema["parameters"]
     assert params["type"] == "object"
     assert "required" in params
-    for req in ["destination", "duration_days", "daily_schedule", "budget_tier", "estimated_cost_usd"]:
+    for req in ["destination", "days"]:
         assert req in params["required"], f"Missing required property: {req}"
 
     daily_schedule = params["properties"]["daily_schedule"]
@@ -146,16 +146,19 @@ def test_batch_processing_partial_failure_isolation():
         {"id": "REQ-3", "destination": "Tokyo, Japan", "duration_days": 5, "travel_style": "culinary", "budget_tier": "luxury"},
     ]
 
-    # Monkeypatch call_openai_function_with_retry to fail only on FailCity
-    original_func = bfc.call_openai_function_with_retry
+    # Monkeypatch call_openai_function and call_openai_function_with_retry
+    orig_call = bfc.call_openai_function
+    orig_retry = bfc.call_openai_function_with_retry
 
     def selective_mock_call(*args, **kwargs):
-        dest = kwargs.get("destination", "")
+        dest = kwargs.get("destination", "") or (args[1] if len(args) > 1 else "")
         if "FailCity" in dest:
             raise RuntimeError("Simulated fatal endpoint parse error on FailCity")
-        return bfc.mock_generate_itinerary(dest, kwargs.get("duration_days", 3), kwargs.get("travel_style", "cultural"), kwargs.get("budget_tier", "moderate"))
+        days = kwargs.get("days", kwargs.get("duration_days", (args[2] if len(args) > 2 else 3)))
+        return bfc.mock_generate_itinerary(dest, days, kwargs.get("travel_style", "cultural"), kwargs.get("budget_tier", "moderate"))
 
     try:
+        bfc.call_openai_function = selective_mock_call
         bfc.call_openai_function_with_retry = selective_mock_call
         results = bfc.batch_process(
             inputs=mock_inputs,
@@ -176,7 +179,8 @@ def test_batch_processing_partial_failure_isolation():
 
         print("[PASS] Test 5: Batch processing isolates individual errors without terminating batch.")
     finally:
-        bfc.call_openai_function_with_retry = original_func
+        bfc.call_openai_function = orig_call
+        bfc.call_openai_function_with_retry = orig_retry
 
 
 def test_sample_files_exist():

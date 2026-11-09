@@ -1,6 +1,7 @@
 {
   "id": "NYC-03",
   "destination": "New York City, USA",
+  "days": 4,
   "duration_days": 4,
   "travel_style": "leisure",
   "budget_tier": "budget",
@@ -49,7 +50,8 @@
       "Use OMNY contactless tap-to-pay on subways; after 12 rides in a Monday-Sunday week, all additional rides are free.",
       "Enjoy free iconic views from the Staten Island Ferry instead of expensive boat tours.",
       "Walk across the bridges instead of taking taxis to avoid heavy traffic delays."
-    ]
+    ],
+    "days": 4
   },
   "error": null,
   "latency_seconds": 0.1

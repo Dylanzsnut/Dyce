@@ -75,21 +75,25 @@ logger = logging.getLogger("BatchFunctionCalling")
 
 
 # =====================================================================
-# FUNCTION SCHEMA DEFINITION
+# FUNCTION SCHEMA DEFINITION (Step 2 from Assignment 05)
 # =====================================================================
 ITINERARY_FUNCTION_SCHEMA = {
     "name": "generate_itinerary",
-    "description": "Generate a detailed day-by-day travel itinerary with scheduled activities, budget estimates, and recommendations.",
+    "description": "Generate a travel itinerary for a given destination and duration.",
     "parameters": {
         "type": "object",
         "properties": {
             "destination": {
                 "type": "string",
-                "description": "Target city and country for travel"
+                "description": "Travel destination city or country"
+            },
+            "days": {
+                "type": "integer",
+                "description": "Number of days to plan for"
             },
             "duration_days": {
                 "type": "integer",
-                "description": "Total number of itinerary days"
+                "description": "Number of days to plan for"
             },
             "travel_style": {
                 "type": "string",
@@ -130,12 +134,12 @@ ITINERARY_FUNCTION_SCHEMA = {
                 "description": "Essential transit, cultural etiquette, or safety tips"
             }
         },
-        "required": [
-            "destination", "duration_days", "travel_style",
-            "budget_tier", "estimated_cost_usd", "daily_schedule", "local_tips"
-        ]
+        "required": ["destination", "days"]
     }
 }
+
+# Functions list definition matching Assignment 05 specification
+functions = [ITINERARY_FUNCTION_SCHEMA]
 
 # Modern tools format for OpenAI v1
 TOOLS_SCHEMA = [
@@ -292,7 +296,7 @@ MOCK_DATABASE = {
 
 
 # =====================================================================
-# AZURE OPENAI CLIENT INITIALIZATION
+# STEP 1: CLIENT INITIALIZATION
 # =====================================================================
 def get_azure_client() -> Optional[Any]:
     """Initialize AzureOpenAI client from environment variables if present."""
@@ -314,8 +318,12 @@ def get_azure_client() -> Optional[Any]:
         return None
 
 
+# Module-level client instance (falls back to None for offline mock)
+client = get_azure_client()
+
+
 # =====================================================================
-# TENACITY-DECORATED API CALL
+# STEP 3: TENACITY-DECORATED API CALL
 # =====================================================================
 @retry(
     retry=retry_if_exception_type(RETRYABLE_EXCEPTIONS),
@@ -324,19 +332,29 @@ def get_azure_client() -> Optional[Any]:
     reraise=True,
     before_sleep=before_sleep_log(logger, logging.WARNING)
 )
-def call_openai_function_with_retry(
-    client: Any,
-    model_deployment: str,
+def call_openai_function(
     prompt: str,
     destination: str,
-    duration_days: int,
-    travel_style: str = "cultural",
-    budget_tier: str = "moderate"
+    days: Optional[int] = None,
+    client: Optional[Any] = None,
+    model_deployment: Optional[str] = None,
+    duration_days: Optional[int] = None,
+    **kwargs
 ) -> Dict[str, Any]:
     """
-    Executes Azure OpenAI Chat Completion with Function Calling under Tenacity retry management.
-    Retries up to 5 times on rate limits or transient errors with exponential backoff.
+    Step 3: Call Azure OpenAI Function Calling under Tenacity retry management.
+    Retries on rate limits or transient errors with exponential backoff (max 5 attempts).
     """
+    actual_days = days if days is not None else (duration_days if duration_days is not None else 3)
+    active_client = client if client is not None else globals().get("client")
+    deployment = model_deployment or os.getenv("AZURE_OPENAI_DEPLOYMENT_NAME", "gpt-4o-mini")
+    style = kwargs.get("travel_style", "cultural")
+    budget = kwargs.get("budget_tier", "moderate")
+
+    # If client is not available or mock mode, generate structured mock
+    if active_client is None:
+        return mock_generate_itinerary(destination, actual_days, style, budget)
+
     system_message = (
         "You are an expert travel architect and concierge. "
         "Formulate structured day-by-day travel itineraries. "
@@ -344,14 +362,14 @@ def call_openai_function_with_retry(
     )
     user_message = (
         f"{prompt}\n\n"
-        f"Constraints: Destination: {destination}, Duration: {duration_days} days, "
-        f"Style: {travel_style}, Budget: {budget_tier}."
+        f"Constraints: Destination: {destination}, Duration: {actual_days} days, "
+        f"Style: {style}, Budget: {budget}."
     )
 
     # Modern Tools API (OpenAI >= 1.0)
     try:
-        response = client.chat.completions.create(
-            model=model_deployment,
+        response = active_client.chat.completions.create(
+            model=deployment,
             messages=[
                 {"role": "system", "content": system_message},
                 {"role": "user", "content": user_message}
@@ -363,34 +381,46 @@ def call_openai_function_with_retry(
         if message.tool_calls:
             tool_call = message.tool_calls[0]
             args = json.loads(tool_call.function.arguments)
+            # Ensure "days" field is present
+            if "days" not in args and "duration_days" in args:
+                args["days"] = args["duration_days"]
             return args
     except (TypeError, AttributeError, KeyError):
         # Fallback to legacy functions schema for older deployment versions
-        response = client.chat.completions.create(
-            model=model_deployment,
+        response = active_client.chat.completions.create(
+            model=deployment,
             messages=[
                 {"role": "system", "content": system_message},
                 {"role": "user", "content": user_message}
             ],
-            functions=[ITINERARY_FUNCTION_SCHEMA],
+            functions=functions,
             function_call={"name": "generate_itinerary"}
         )
         func_call = response.choices[0].message.function_call
         args = json.loads(func_call.arguments)
+        if "days" not in args and "duration_days" in args:
+            args["days"] = args["duration_days"]
         return args
 
     raise ValueError("No valid function call received from API response.")
 
 
-def mock_generate_itinerary(destination: str, duration_days: int, travel_style: str, budget_tier: str) -> Dict[str, Any]:
+# Backwards-compatible alias
+call_openai_function_with_retry = call_openai_function
+
+
+def mock_generate_itinerary(destination: str, duration_days: int, travel_style: str = "cultural", budget_tier: str = "moderate") -> Dict[str, Any]:
     """Generates deterministic mock itinerary when running in demonstration mode."""
     for key, data in MOCK_DATABASE.items():
         if destination.lower() in key.lower() or key.lower() in destination.lower():
-            return data
+            res = dict(data)
+            res["days"] = res.get("duration_days", duration_days)
+            return res
 
     # Dynamic generic mock if destination is not in pre-defined set
     return {
         "destination": destination,
+        "days": duration_days,
         "duration_days": duration_days,
         "travel_style": travel_style,
         "budget_tier": budget_tier,
@@ -415,27 +445,44 @@ def mock_generate_itinerary(destination: str, duration_days: int, travel_style: 
 
 
 # =====================================================================
-# BATCH PROCESSOR WITH PACING & EXCEPTION ISOLATION
+# STEP 5: EXAMPLE BATCH INPUTS (from Assignment 05 specification)
+# =====================================================================
+batch_inputs = [
+    {"prompt": "Plan a travel itinerary.", "destination": "Paris", "days": 3},
+    {"prompt": "Plan a travel itinerary.", "destination": "Tokyo", "days": 5},
+    {"prompt": "Plan a travel itinerary.", "destination": "New York", "days": 4},
+]
+
+
+# =====================================================================
+# STEP 4: BATCH PROCESSING FUNCTION
 # =====================================================================
 def batch_process(
-    inputs: List[Dict[str, Any]],
+    inputs: Optional[List[Dict[str, Any]]] = None,
     client: Optional[Any] = None,
     model_deployment: Optional[str] = None,
     delay_between_requests: float = 1.0,
     force_demo: bool = False
 ) -> List[Dict[str, Any]]:
     """
-    Processes a batch of itinerary requests using Azure OpenAI function calling.
+    Step 4: Processes a batch of itinerary requests using Azure OpenAI function calling.
 
     Key Features:
     - Isolates exceptions: a failure on one item does not crash the pipeline.
     - Paces requests to prevent bursting rate limits.
     - Returns structured outcome logs with timing and status.
     """
+    if inputs is None:
+        inputs = batch_inputs
+
+    active_client = client if client is not None else globals().get("client")
+    if force_demo:
+        active_client = None
+
     if model_deployment is None:
         model_deployment = os.getenv("AZURE_OPENAI_DEPLOYMENT_NAME", "gpt-4o-mini")
 
-    use_mock = force_demo or (client is None)
+    use_mock = (active_client is None)
     if use_mock:
         logger.info("Running batch processing in DEMONSTRATION / OFFLINE mode.")
     else:
@@ -444,21 +491,22 @@ def batch_process(
     results = []
     total_items = len(inputs)
 
-    for idx, item in enumerate(inputs, 1):
-        item_id = item.get("id", f"REQ-{idx:02d}")
-        destination = item.get("destination", "Unknown Destination")
-        duration = item.get("duration_days", 3)
-        style = item.get("travel_style", "cultural")
-        budget = item.get("budget_tier", "moderate")
-        prompt = item.get("prompt", f"Plan an itinerary for {destination}.")
+    for idx, input_data in enumerate(inputs, 1):
+        item_id = input_data.get("id", f"REQ-{idx:02d}")
+        destination = input_data.get("destination", "Unknown Destination")
+        days = input_data.get("days", input_data.get("duration_days", 3))
+        style = input_data.get("travel_style", "cultural")
+        budget = input_data.get("budget_tier", "moderate")
+        prompt = input_data.get("prompt", f"Plan a travel itinerary for {destination}.")
 
-        logger.info(f"[{idx}/{total_items}] Processing '{item_id}' ({destination}, {duration} days)...")
+        logger.info(f"[{idx}/{total_items}] Processing '{item_id}' ({destination}, {days} days)...")
         start_time = time.time()
 
         result_record = {
             "id": item_id,
             "destination": destination,
-            "duration_days": duration,
+            "days": days,
+            "duration_days": days,
             "travel_style": style,
             "budget_tier": budget,
             "status": "PENDING",
@@ -469,16 +517,15 @@ def batch_process(
 
         try:
             if use_mock:
-                # Simulate realistic API round-trip delay
                 time.sleep(0.1)
-                data = mock_generate_itinerary(destination, duration, style, budget)
+                data = mock_generate_itinerary(destination, days, style, budget)
             else:
-                data = call_openai_function_with_retry(
-                    client=client,
-                    model_deployment=model_deployment,
+                data = call_openai_function(
                     prompt=prompt,
                     destination=destination,
-                    duration_days=duration,
+                    days=days,
+                    client=active_client,
+                    model_deployment=model_deployment,
                     travel_style=style,
                     budget_tier=budget
                 )
@@ -490,13 +537,13 @@ def batch_process(
         except Exception as exc:
             result_record["status"] = "FAILED"
             result_record["error"] = str(exc)
-            logger.error(f"[{idx}/{total_items}] Failed processing '{destination}': {exc}", exc_info=False)
+            logger.error(f"Error processing {destination}: {exc}", exc_info=False)
 
         finally:
             result_record["latency_seconds"] = round(time.time() - start_time, 2)
             results.append(result_record)
 
-            # Inter-request delay pacing (except after last item)
+            # Optional: prevent hitting rate limits aggressively
             if idx < total_items and delay_between_requests > 0:
                 time.sleep(delay_between_requests)
 
